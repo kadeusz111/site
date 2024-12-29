@@ -55,3 +55,4 @@ function updateNowPlaying(nowPlaying) {
 }
 
 document.addEventListener('DOMContentLoaded', getTopTracks);
+setInterval(getTopTracks, 3000); //Auto Update co ci w duszy gra co 3 sekundy
