@@ -54,4 +54,7 @@ function updateNowPlaying(nowPlaying) {
     albumArtElement.style.display = 'block';
 }
 
-document.addEventListener('DOMContentLoaded', getTopTracks);
+document.addEventListener('DOMContentLoaded', () => {
+    getTopTracks(); 
+    setInterval(getTopTracks, 3000);
+});
