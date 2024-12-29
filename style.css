@@ -1,0 +1,282 @@
+body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background: white;
+            font-family: 'Anek Gurmukhi', sans-serif;
+            display: flex; /* Aby umożliwić centrowanie kontenera */
+            justify-content: center; /* Wycentruj poziomo */
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+            position:fixed;
+        }
+        .background-image {
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            left: 0;
+            top: 0;
+        }
+        .klocek {
+            position: fixed;
+            background: #121212;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 20px;
+            width: 841px;
+            height: 707px;
+            
+        }
+        .header-image {
+            position: fixed;
+            width: 841px;
+            height: 169px;
+            margin-left: auto;
+            margin-right: auto;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+        }
+        .box {
+            position: fixed;
+            background: #212121;
+            border-radius: 10px;
+            
+        }
+        .box-small {
+            width: 96px;
+            height: 28px;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 5px;
+            transform: translateX(720px) translateY(195px);
+        }
+        .box-medium {
+            width: 755px;
+            height: 278px;
+            margin-left: auto;
+            margin-right: auto;
+            transform: translateX(5.5%) translateY(285px);
+        }
+        .box-large {
+            width: 755px;
+            height: 103px;
+            margin-left: auto;
+            margin-right: auto;
+            transform: translateX(5.5%) translateY(580px);
+        }
+        .box-medium-left {
+            width: 215px;
+            height: 47px;
+            margin-left: auto;
+            margin-right: auto;
+            background: #151515;
+            transform: translateX(70px) translateY(490px);
+        }
+        .box-medium-right {
+            width: 215px;
+            height: 47px;
+            margin-left: auto;
+            margin-right: auto;
+            transform: translateX(310px) translateY(490px);
+            background: #151515;
+        }
+        .box-medium-right-right {
+            width: 215px;
+            height: 47px;
+            margin-left: auto;
+            margin-right: auto;
+            transform: translateX(550px) translateY(490px);
+            background: #151515;
+        }
+        .profile-pic {
+            position: fixed;
+            width: 137px;
+            height: 136px;
+            border-radius: 15px;
+            margin-left: auto;
+            margin-right: auto;
+            transform: translateX(30%) translateY(120px);
+        }
+        .badge {
+            position: fixed;
+            
+        }
+        .badge-small {
+            width: 20px;
+            height: 20px;
+            margin-left: auto;
+            margin-right: auto;
+            transform: translateX(786px) translateY(200px);
+        }
+        .badge-medium {
+            width: 25px;
+            height: 25px;
+            margin-left: auto;
+            margin-right: auto;
+            transform: translateX(726px) translateY(197px);
+        }
+        .badge-large {
+            width: 27px;
+            height: 27px;
+            margin-left: auto;
+            margin-right: auto;
+            transform: translateX(755px) translateY(197px);
+        }
+        .name-title {
+            position: fixed;
+            color: white;
+            font-size: 40px;
+            font-weight: 400;
+            margin-left: auto;
+            margin-right: auto;
+            transform: translateX(200px) translateY(185px);
+        }
+        .pronouns {
+            position: fixed;
+            color: white;
+            font-size: 16px;
+            font-weight: 400;
+            margin-left: auto;
+            margin-right: auto;
+            transform: translateX(200px) translateY(225px);
+        }
+        .description {
+            position: fixed;
+            width: 274px;
+            height: 126px;
+            margin-left: auto;
+            margin-right: auto;
+            color: white;
+            font-size: 16px;
+            font-weight: 400;
+            word-wrap: break-word;
+            transform: translateX(70px) translateY(315px);
+        }
+        .now-playing {
+            position: fixed;
+            margin-left: auto;
+            margin-right: auto;
+            color: white;
+            font-size: 16px;
+            font-weight: 400;
+            transform: translateX(155px) translateY(597px);
+        }
+        .song-title {
+            position: fixed;
+            margin-left: auto;
+            margin-right: auto;
+            color: white;
+            font-size: 32px;
+            font-weight: 400;
+            transform: translateX(155px) translateY(620px);
+        }
+        .arrow {
+            position: fixed;
+            width: 15px;
+            height: 15px;
+            opacity: 0.7;
+        }
+        .arrow-left {
+            margin-left: auto;
+            margin-right: auto;
+            transform: translateX(250px) translateY(506px);
+        }
+        .arrow-right {
+            margin-left: auto;
+            margin-right: auto;
+            transform: translateX(490px) translateY(506px);
+        }
+        .arrow-right-right {
+            margin-left: auto;
+            margin-right: auto;
+            transform: translateX(730px) translateY(506px);
+        }
+        .streamer {
+            position: fixed;
+            margin-left: auto;
+            margin-right: auto;
+            color: white;
+            font-size: 20px;
+            font-weight: 400;
+            word-wrap: break-word;
+            transform: translateX(370px) translateY(506px);
+        }
+        .github-text {
+            position: fixed;
+            margin-left: auto;
+            margin-right: auto;
+            color: white;
+            font-size: 20px;
+            font-weight: 400;
+            word-wrap: break-word;
+            transform: translateX(605px) translateY(506px);
+        }
+        
+        .mark-text {
+            position: fixed;
+            bottom: 10px; /* Odległość od dołu ekranu, dostosuj według potrzeb */
+            left: 50%; /* Wycentrowanie w poziomie */
+            transform: translateX(-50%); /* Dostosowanie pozycji względem środka */
+            color: rgba(255, 255, 255, 0.199);
+            font-size: 15px;
+            font-weight: 400;
+            word-wrap: break-word;
+        }
+        .additional-text {
+            position: fixed;
+            margin-left: auto;
+            margin-right: auto;
+            color: white;
+            font-size: 20px;
+            font-weight: 400;
+            word-wrap: break-word;
+            transform: translateX(130px) translateY(506px);
+        }
+        .spotify-logo {
+            position: fixed;
+            width: 30px;
+            height: 30px;
+            margin-left: auto;
+            margin-right: auto;
+            transform: translateX(80px) translateY(499px);
+        }
+        .steam-logo {
+            position: fixed;
+            width: 30px;
+            height: 30px;
+            margin-left: auto;
+            margin-right: auto;
+            transform: translateX(325px) translateY(499px);
+        }
+        .github-logo {
+            position: fixed;
+            width: 36px;
+            height: 36px;
+            margin-left: auto;
+            margin-right: auto;
+            transform: translateX(560px) translateY(497px);
+        }
+        .additional-image {
+            position: fixed;
+            width: 103px;
+            height: 103px;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 10px;
+            transform: translateX(40px) translateY(580px);
+        }
+        .song-image {
+            position: fixed;
+            width: 103px;
+            height: 103px;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 10px;
+            transform: translateX(40px) translateY(580px);
+        }
