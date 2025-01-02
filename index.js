@@ -56,5 +56,5 @@ function updateNowPlaying(nowPlaying) {
 
 document.addEventListener('DOMContentLoaded', () => {
     getTopTracks(); 
-    setInterval(getTopTracks, 3000);
+    setInterval(getTopTracks, 180000);
 });
