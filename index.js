@@ -1,6 +1,6 @@
 async function getTopTracks() {
     const username = 'kadeusz';
-    const apiKey = '57a54401eba0ec9ece0fa7c4724d0682';
+    const apiKey = '';
 
     try {
         const response = await axios.get(`https://ws.audioscrobbler.com/2.0/`, {
