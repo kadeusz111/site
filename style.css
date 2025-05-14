@@ -1,557 +1,207 @@
-body, html {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-            background: white;
-            font-family: 'Anek Gurmukhi', sans-serif;
-            display: flex; /* Aby umożliwić centrowanie kontenera */
-            justify-content: center; /* Wycentruj poziomo */
-        }
-        .container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100%;
-            width: 100%;
-            position:fixed;
-        }
-        .background-image {
-            width: 100%;
-            height: 100%;
-            position: fixed;
-            left: 0;
-            top: 0;
-        }
-        .klocek {
-            position: fixed;
-            background: #121212;
-            margin-left: auto;
-            margin-right: auto;
-            border-radius: 20px;
-            width: 841px;
-            height: 707px;
-            
-        }
-        .header-image {
-            position: fixed;
-            width: 841px;
-            height: 169px;
-            margin-left: auto;
-            margin-right: auto;
-            border-top-left-radius: 20px;
-            border-top-right-radius: 20px;
-        }
-        .box {
-            position: fixed;
-            background: #212121;
-            border-radius: 10px;
-            
-        }
-        .box-small {
-            width: 96px;
-            height: 28px;
-            margin-left: auto;
-            margin-right: auto;
-            border-radius: 5px;
-            transform: translateX(720px) translateY(195px);
-        }
-        .box-medium {
-            width: 755px;
-            height: 278px;
-            margin-left: auto;
-            margin-right: auto;
-            transform: translateX(5.5%) translateY(285px);
-        }
-        .box-large {
-            width: 755px;
-            height: 103px;
-            margin-left: auto;
-            margin-right: auto;
-            transform: translateX(5.5%) translateY(580px);
-        }
-        .box-medium-left {
-            width: 215px;
-            height: 47px;
-            margin-left: auto;
-            margin-right: auto;
-            background: #151515;
-            transform: translateX(70px) translateY(490px);
-        }
-        .box-medium-right {
-            width: 215px;
-            height: 47px;
-            margin-left: auto;
-            margin-right: auto;
-            transform: translateX(310px) translateY(490px);
-            background: #151515;
-        }
-        .box-medium-right-right {
-            width: 215px;
-            height: 47px;
-            margin-left: auto;
-            margin-right: auto;
-            transform: translateX(550px) translateY(490px);
-            background: #151515;
-        }
-        .profile-pic {
-            position: fixed;
-            width: 137px;
-            height: 136px;
-            border-radius: 15px;
-            margin-left: auto;
-            margin-right: auto;
-            transform: translateX(30%) translateY(120px);
-        }
-        .badge {
-            position: fixed;
-            
-        }
-        .badge-small {
-            width: 20px;
-            height: 20px;
-            margin-left: auto;
-            margin-right: auto;
-            transform: translateX(786px) translateY(200px);
-        }
-        .badge-medium {
-            width: 25px;
-            height: 25px;
-            margin-left: auto;
-            margin-right: auto;
-            transform: translateX(726px) translateY(197px);
-        }
-        .badge-large {
-            width: 27px;
-            height: 27px;
-            margin-left: auto;
-            margin-right: auto;
-            transform: translateX(755px) translateY(197px);
-        }
-        .name-title {
-            position: fixed;
-            color: white;
-            font-size: 40px;
-            font-weight: 400;
-            margin-left: auto;
-            margin-right: auto;
-            transform: translateX(200px) translateY(185px);
-        }
-        .pronouns {
-            position: fixed;
-            color: white;
-            font-size: 16px;
-            font-weight: 400;
-            margin-left: auto;
-            margin-right: auto;
-            transform: translateX(200px) translateY(225px);
-        }
-        .description {
-            position: fixed;
-            width: 274px;
-            height: 126px;
-            margin-left: auto;
-            margin-right: auto;
-            color: white;
-            font-size: 16px;
-            font-weight: 400;
-            word-wrap: break-word;
-            transform: translateX(70px) translateY(315px);
-        }
-        .now-playing {
-            position: fixed;
-            margin-left: auto;
-            margin-right: auto;
-            color: white;
-            font-size: 16px;
-            font-weight: 400;
-            transform: translateX(155px) translateY(597px);
-        }
-        .song-title {
-            position: fixed;
-            margin-left: auto;
-            margin-right: auto;
-            color: white;
-            font-size: 32px;
-            font-weight: 400;
-            transform: translateX(155px) translateY(620px);
-        }
-        .arrow {
-            position: fixed;
-            width: 15px;
-            height: 15px;
-            opacity: 0.7;
-        }
-        .arrow-left {
-            margin-left: auto;
-            margin-right: auto;
-            transform: translateX(250px) translateY(506px);
-        }
-        .arrow-right {
-            margin-left: auto;
-            margin-right: auto;
-            transform: translateX(490px) translateY(506px);
-        }
-        .arrow-right-right {
-            margin-left: auto;
-            margin-right: auto;
-            transform: translateX(730px) translateY(506px);
-        }
-        .streamer {
-            position: fixed;
-            margin-left: auto;
-            margin-right: auto;
-            color: white;
-            font-size: 20px;
-            font-weight: 400;
-            word-wrap: break-word;
-            transform: translateX(370px) translateY(506px);
-        }
-        .github-text {
-            position: fixed;
-            margin-left: auto;
-            margin-right: auto;
-            color: white;
-            font-size: 20px;
-            font-weight: 400;
-            word-wrap: break-word;
-            transform: translateX(605px) translateY(506px);
-        }
-        
-        .mark-text {
-            position: fixed;
-            bottom: 10px; /* Odległość od dołu ekranu, dostosuj według potrzeb */
-            left: 50%; /* Wycentrowanie w poziomie */
-            transform: translateX(-50%); /* Dostosowanie pozycji względem środka */
-            color: rgba(255, 255, 255, 0.199);
-            font-size: 15px;
-            font-weight: 400;
-            word-wrap: break-word;
-        }
-        .additional-text {
-            position: fixed;
-            margin-left: auto;
-            margin-right: auto;
-            color: white;
-            font-size: 20px;
-            font-weight: 400;
-            word-wrap: break-word;
-            transform: translateX(130px) translateY(506px);
-        }
-        .spotify-logo {
-            position: fixed;
-            width: 30px;
-            height: 30px;
-            margin-left: auto;
-            margin-right: auto;
-            transform: translateX(80px) translateY(499px);
-        }
-        .steam-logo {
-            position: fixed;
-            width: 30px;
-            height: 30px;
-            margin-left: auto;
-            margin-right: auto;
-            transform: translateX(325px) translateY(499px);
-        }
-        .github-logo {
-            position: fixed;
-            width: 36px;
-            height: 36px;
-            margin-left: auto;
-            margin-right: auto;
-            transform: translateX(560px) translateY(497px);
-        }
-        .additional-image {
-            position: fixed;
-            width: 103px;
-            height: 103px;
-            margin-left: auto;
-            margin-right: auto;
-            border-radius: 10px;
-            transform: translateX(40px) translateY(580px);
-        }
-        .song-image {
-            position: fixed;
-            width: 103px;
-            height: 103px;
-            margin-left: auto;
-            margin-right: auto;
-            border-radius: 10px;
-            transform: translateX(40px) translateY(580px);
-        }
-        @media (max-width: 768px) {
-            .container {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                height: 100%;
-                width: 100%;
-                position:fixed;
-            }
-            .background-image {
-                width: 100%;
-                height: 100%;
-                position: fixed;
-                left: 0;
-                top: 0;
-            }
-            .klocek {
-                position: fixed;
-                background: #121212;
-                margin-left: auto;
-                margin-right: auto;
-                border-radius: 20px;
-                width: 420px;
-                height: 910px;
-                
-            }
-            .header-image {
-                position: fixed;
-                width: 420px;
-                height: 200px;
-                margin-left: auto;
-                margin-right: auto;
-                border-top-left-radius: 20px;
-                border-top-right-radius: 20px;
-                
-            }
-            .box {
-                position: fixed;
-                background: #212121;
-                border-radius: 10px;
-                
-            }
-            .box-small {
-                width: 96px;
-                height: 28px;
-                margin-left: auto;
-                margin-right: auto;
-                border-radius: 5px;
-                transform: translateX(720px) translateY(195px);
-            }
-            .box-medium {
-                width: 390px;
-                height: 478px;
-                margin-left: auto;
-                margin-right: auto;
-                transform: translateX(3.8%) translateY(285px);
-            }
-            .box-large {
-                width: 420px;
-                height: 103px;
-                margin-left: auto;
-                margin-right: auto;
-                transform: translateX(0%) translateY(810px);
-            }
-            .box-medium-left {
-                width: 215px;
-                height: 47px;
-                margin-left: auto;
-                margin-right: auto;
-                background: #151515;
-                transform: translateX(30px) translateY(570px);
-            }
-            .box-medium-right {
-                width: 215px;
-                height: 47px;
-                margin-left: auto;
-                margin-right: auto;
-                transform: translateX(30px) translateY(630px);
-                background: #151515;
-            }
-            .box-medium-right-right {
-                width: 215px;
-                height: 47px;
-                margin-left: auto;
-                margin-right: auto;
-                transform: translateX(30px) translateY(690px);
-                background: #151515;
-            }
-            .profile-pic {
-                position: fixed;
-                width: 137px;
-                height: 136px;
-                border-radius: 15px;
-                margin-left: auto;
-                margin-right: auto;
-                transform: translateX(23%) translateY(120px);
-            }
-            .badge {
-                position: fixed;
-                
-            }
-            .badge-small {
-                width: 20px;
-                height: 20px;
-                margin-left: auto;
-                margin-right: auto;
-                transform: translateX(786px) translateY(200px);
-            }
-            .badge-medium {
-                width: 25px;
-                height: 25px;
-                margin-left: auto;
-                margin-right: auto;
-                transform: translateX(726px) translateY(197px);
-            }
-            .badge-large {
-                width: 27px;
-                height: 27px;
-                margin-left: auto;
-                margin-right: auto;
-                transform: translateX(755px) translateY(197px);
-            }
-            .name-title {
-                position: fixed;
-                color: white;
-                font-size: 40px;
-                font-weight: 400;
-                margin-left: auto;
-                margin-right: auto;
-                transform: translateX(180px) translateY(210px);
-            }
-            .pronouns {
-                position: fixed;
-                color: white;
-                font-size: 16px;
-                font-weight: 400;
-                margin-left: auto;
-                margin-right: auto;
-                transform: translateX(180px) translateY(245px);
-            }
-            .description {
-                position: fixed;
-                width: 274px;
-                height: 126px;
-                margin-left: auto;
-                margin-right: auto;
-                color: white;
-                font-size: 18px;
-                font-weight: 400;
-                word-wrap: break-word;
-                transform: translateX(45px) translateY(310px);
-            }
-            .now-playing {
-                position: fixed;
-                margin-left: auto;
-                margin-right: auto;
-                color: white;
-                font-size: 14px;
-                font-weight: 400;
-                transform: translateX(115px) translateY(830px);
-            }
-            .song-title {
-                position: fixed;
-                margin-left: auto;
-                margin-right: auto;
-                color: white;
-                font-size: 16px;
-                font-weight: 400;
-                transform: translateX(115px) translateY(852px);
-            }
-            .arrow {
-                position: fixed;
-                width: 15px;
-                height: 15px;
-                opacity: 0.7;
-            }
-            .arrow-left {
-                margin-left: auto;
-                margin-right: auto;
-                transform: translateX(205px) translateY(585px);
-            }
-            .arrow-right {
-                margin-left: auto;
-                margin-right: auto;
-                transform: translateX(205px) translateY(645px);
-            }
-            .arrow-right-right {
-                margin-left: auto;
-                margin-right: auto;
-                transform: translateX(205px) translateY(705px);
-            }
-            .streamer {
-                position: fixed;
-                margin-left: auto;
-                margin-right: auto;
-                color: white;
-                font-size: 20px;
-                font-weight: 400;
-                word-wrap: break-word;
-                transform: translateX(90px) translateY(645px);
-            }
-            .github-text {
-                position: fixed;
-                margin-left: auto;
-                margin-right: auto;
-                color: white;
-                font-size: 20px;
-                font-weight: 400;
-                word-wrap: break-word;
-                transform: translateX(90px) translateY(705px);
-            }
-            
-            .mark-text {
-                position: fixed;
-                bottom: 40px; /* Odległość od dołu ekranu, dostosuj według potrzeb */
-                left: 50%; /* Wycentrowanie w poziomie */
-                transform: translateX(-50%); /* Dostosowanie pozycji względem środka */
-                color: rgba(255, 255, 255, 0.199);
-                font-size: 0px;
-                font-weight: 400;
-                word-wrap: break-word;
-            }
-            .additional-text {
-                position: fixed;
-                margin-left: auto;
-                margin-right: auto;
-                color: white;
-                font-size: 20px;
-                font-weight: 400;
-                word-wrap: break-word;
-                transform: translateX(90px) translateY(585px);
-            }
-            .spotify-logo {
-                position: fixed;
-                width: 30px;
-                height: 30px;
-                margin-left: auto;
-                margin-right: auto;
-                transform: translateX(40px) translateY(578px);
-            }
-            .steam-logo {
-                position: fixed;
-                width: 30px;
-                height: 30px;
-                margin-left: auto;
-                margin-right: auto;
-                transform: translateX(40px) translateY(638px);
-            }
-            .github-logo {
-                position: fixed;
-                width: 36px;
-                height: 36px;
-                margin-left: auto;
-                margin-right: auto;
-                transform: translateX(37px) translateY(695px);
-            }
-            .additional-image {
-                position: fixed;
-                width: 103px;
-                height: 103px;
-                margin-left: auto;
-                margin-right: auto;
-                border-radius: 10px;
-                transform: translateX(40px) translateY(580px);
-            }
-            .song-image {
-                position: fixed;
-                width: 103px;
-                height: 103px;
-                margin-left: auto;
-                margin-right: auto;
-                border-radius: 10px;
-                transform: translateX(0px) translateY(810px);
-            }
-        }
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: 'SF Pro Display', sans-serif;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  
+  .container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    background: linear-gradient(159deg, #151517 0%, #262629 100%);
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  
+  .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+  }
+  
+  .nav-iso, .nav-tools {
+    text-decoration: none;
+    position: absolute;
+    top: 30px;
+    color: rgb(168, 168, 168);
+    font-size: 20px;
+    font-weight: 400;
+    word-wrap: break-word;
+  }
+
+  .nav-slash {
+    position: absolute;
+    top: 30px;
+    color: white;
+    font-size: 20px;
+    font-weight: 400;
+    word-wrap: break-word;
+  }
+  
+  .nav-slash {
+    left: 50%;
+    transform: translateX(-7300%); /* centrum */
+  }
+  
+  .nav-tools {
+    left: 50%;
+    transform: translateX(-900%); /* przesunięcie w lewo */
+  }
+  
+  .nav-iso {
+    left: 50%;
+    transform: translateX(-900%); /* przesunięcie w prawo */
+  }
+  .avatar {
+    width: 61px;
+    height: 61px;
+    position: absolute;
+    top: 205px;
+    left: 50%;
+    transform: translateX(-900%); /* w lewo */
+    border-radius: 20px;
+  }
+  
+  .name {
+    position: absolute;
+    top: 210px;
+    left: 50%;
+    transform: translateX(-296%); /* w lewo */
+    color: white;
+    font-size: 40px;
+    font-weight: 700;
+  }
+  
+  .description {
+    position: absolute;
+    top: 295px;
+    left: 50%;
+    transform: translateX(-120%);
+    color: white;
+    font-size: 32px;
+    font-weight: 500;
+  }
+  
+  .github-button {
+    width: 168px;
+    height: 46px;
+    position: absolute;
+    top: 470px;
+    left: 50%;
+    transform: translateX(-325%);
+    background: #1F1F21;
+    border-radius: 10px;
+    border: 1px solid #393939;
+  }
+  
+  .github-text {
+    position: absolute;
+    text-decoration: none;
+    top: 482px;
+    left: 50%;
+    transform: translateX(-590%);
+    color: white;
+    font-size: 20px;
+    font-weight: 400;
+  }
+  
+  .main-img {
+    width: 705px;
+    height: 459px;
+    position: absolute;
+    top: 123px;
+    left: 50%;
+    transform: translateX(0.0%);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card-left, .card-center, .card-right {
+    width: 377px;
+    height: 212px;
+    position: absolute;
+    top: 650px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card-left {
+    left: 50%;
+    transform: translateX(-160%);
+  }
+  .card-center {
+    left: 50%;
+    transform: translateX(-40%);
+  }
+  .card-right {
+    left: 50%;
+    transform: translateX(80%);
+  }
+  
+  .card-title-left, .card-title-center, .card-title-right {
+    position: absolute;
+    top: 656px;
+    color: #BCBDC0;
+    font-size: 14px;
+    font-weight: 700;
+  }
+  
+  .card-title-left {
+    left: 50%;
+    transform: translateX(-325%);
+  }
+  .card-title-center {
+    left: 50%;
+    transform: translateX(-10%);
+  }
+  .card-title-right {
+    left: 50%;
+    transform: translateX(840%);
+  }
+  
+  .card-desc-left, .card-desc-center, .card-desc-right {
+    position: absolute;
+    top: 688px;
+    color: white;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+  }
+  
+  .card-desc-left {
+    left: 50%;
+    transform: translateX(-175%);
+  }
+  .card-desc-center {
+    left: 50%;
+    transform: translateX(-41%);
+  }
+  .card-desc-right {
+    left: 50%;
+    transform: translateX(94%);
+  }
+  
+  .underline {
+    width: 62px;
+    height: 3px;
+    position: absolute;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-847%);
+    background: #27D4E1;
+  }
+  
+  .icon {
+    width: 29px;
+    height: 29px;
+    position: absolute;
+    top: 480px;
+    left: 50%;
+    transform: translateX(-1476%);
+  }
+  
