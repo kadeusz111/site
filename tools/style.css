@@ -131,3 +131,27 @@ html, body {
     left: 50%;
     transform: translateX(-51%);
   }
+  @media (max-width: 1000px) {
+    .nav-slash {
+        left: 50%;
+        transform: translateX(-3000%); /* centrum */
+      }
+      
+      .nav-tools {
+        left: 50%;
+        transform: translateX(-350%); /* przesunięcie w lewo */
+      }
+      
+      .nav-iso {
+        left: 50%;
+        transform: translateX(-230%); /* przesunięcie w prawo */
+      }
+
+      .underline {
+        width: 62px;
+        height: 3px;
+        top: 70px;
+        left: 50%;
+        transform: translateX(-253%);
+      }
+  }
