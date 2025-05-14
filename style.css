@@ -205,3 +205,194 @@ html, body {
     transform: translateX(-1476%);
   }
   
+  @media (max-width: 1400px) {
+    .main-img {
+        width: 635px;
+        height: 389px;
+    }
+    .avatar {
+        width: 59px;
+        height: 59px;
+        top: 175px;
+        left: 50%;
+        transform: translateX(-920%); /* w lewo */
+    }
+    .name {
+        font-size: 38px;
+        font-weight: 700;
+        top: 185px;
+        left: 50%;
+        transform: translateX(-310%); /* w lewo */
+    }
+    .description {
+        font-size: 30px;
+        font-weight: 500;
+        top: 255px;
+        left: 50%;
+        transform: translateX(-127%);
+    }
+    .github-text {
+        top: 463px;
+        left: 50%;
+        transform: translateX(-585%);
+        font-size: 20px;
+        font-weight: 400;
+    }
+    .github-button {
+        width: 154px;
+        height: 46px;
+        top: 450px;
+        left: 50%;
+        transform: translateX(-345%);
+    }
+    .icon {
+        width: 28px;
+        height: 28px;
+        top: 462px;
+        left: 50%;
+        transform: translateX(-1526%);
+    }
+  }
+  @media (max-width: 1200px) {
+    .main-img {
+        width: 0px;
+        height: 0px;
+    }
+    .avatar {
+        width: 59px;
+        height: 59px;
+        top: 175px;
+        left: 50%;
+        transform: translateX(-400%); /* w lewo */
+    }
+    .name {
+        font-size: 38px;
+        font-weight: 700;
+        top: 185px;
+        left: 50%;
+        transform: translateX(-110%); /* w lewo */
+    }
+    .description {
+        font-size: 28px;
+        font-weight: 500;
+        top: 255px;
+        left: 50%;
+        transform: translateX(-57%);
+
+        white-space: nowrap; /* NIE zawijaj do nowej linii */
+        overflow: visible;    /* pokazuj cały tekst */
+        max-width: none;      /* brak ograniczeń szerokości */
+    }
+    .github-text {
+        top: 443px;
+        left: 50%;
+        transform: translateX(-235%);
+        font-size: 20px;
+        font-weight: 400;
+    }
+    .github-button {
+        width: 164px;
+        height: 46px;
+        top: 430px;
+        left: 50%;
+        transform: translateX(-137%);
+    }
+    .icon {
+        width: 28px;
+        height: 28px;
+        top: 442px;
+        left: 50%;
+        transform: translateX(-376%);
+    }
+
+    .card-left, .card-center, .card-right {
+        width: 427px;
+        height: 252px;
+        position: absolute;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      
+      .card-left {
+        top: 650px;
+      }
+      .card-center {
+        top: 950px;
+      }
+      .card-right {
+        top: 1250px;
+      }
+
+      .card-title-left, .card-title-center, .card-title-right {
+        position: absolute;
+        color: #BCBDC0;
+        font-size: 17px;
+        font-weight: 700;
+      }
+      
+      .card-title-left {
+        left: 50%;
+        top: 656px;
+        transform: translateX(-50%);
+      }
+      .card-title-center {
+        left: 50%;
+        top: 956px;
+        transform: translateX(-60%);
+      }
+      .card-title-right {
+        left: 50%;
+        top: 1256px;
+        transform: translateX(-60%);
+      }
+
+    .card-desc-left, .card-desc-center, .card-desc-right {
+        position: absolute;
+        color: white;
+        font-size: 17px;
+        font-weight: 400;
+        line-height: 21px;
+        left: 50%;
+
+        white-space: nowrap; /* NIE zawijaj do nowej linii */
+        overflow: visible;    /* pokazuj cały tekst */
+        max-width: none;      /* brak ograniczeń szerokości */
+      }
+      
+      .card-desc-left {
+        top: 688px;
+        transform: translateX(-49%);
+      }
+      .card-desc-center {
+        top: 988px;
+        transform: translateX(-51%);
+      }
+      .card-desc-right {
+        top: 1288px;
+        transform: translateX(-48%);
+      }
+
+      .nav-slash {
+        left: 50%;
+        transform: translateX(-3000%); /* centrum */
+      }
+      
+      .nav-tools {
+        left: 50%;
+        transform: translateX(-350%); /* przesunięcie w lewo */
+      }
+      
+      .nav-iso {
+        left: 50%;
+        transform: translateX(-230%); /* przesunięcie w prawo */
+      }
+
+      .underline {
+        width: 62px;
+        height: 3px;
+        top: 70px;
+        left: 50%;
+        transform: translateX(-373%);
+      }
+  }
