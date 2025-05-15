@@ -47,7 +47,7 @@ html, body {
   
   .nav-slash {
     left: 50%;
-    transform: translateX(-7300%); /* centrum */
+    transform: translateX(-8900%); /* centrum */
   }
   
   .nav-tools {
@@ -375,7 +375,7 @@ html, body {
 
       .nav-slash {
         left: 50%;
-        transform: translateX(-3000%); /* centrum */
+        transform: translateX(-3600%); /* centrum */
       }
       
       .nav-tools {
