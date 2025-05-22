@@ -58,27 +58,15 @@ body {
     background: rgba(241, 186, 184, 0.7);
     display: flex;
     position: absolute;
-    
   }
-    #stats-list li {
-    left: 123px;
-    top: 450px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 4px 0;
-  }
-    .stats-list {
-    top: 450px;
-  }
-  
+
   .slash {
     position: absolute;
     left: 100vw;
     transform: translateX(-570px);
     top: 89px;
     text-align: center;
-    color: #F1B9B5;
+    color: rgba(241, 185, 181, 0.6);
     font-size: 20px;
     font-weight: 500;
     line-height: 43px;
@@ -104,7 +92,7 @@ body {
     transform: translateX(-370px);
     top: 89px;
     text-align: center;
-    color: rgba(241, 185, 181, 0.6);
+    color: #F1B9B5;
     font-size: 20px;
     font-weight: 500;
     line-height: 43px;
@@ -123,51 +111,30 @@ body {
     line-height: 43px;
     text-decoration: none;
   }
-  .aboutme {
+  .toolslist {
+    left: 153px;
     position: absolute;
-    left: 160px;
-    top: 235px;
-    color: #FFFFFF;
-    font-size: 24px;
-    font-weight: 700;
-    opacity: 0.8;
-  }
-
-  .aboutmetext {
-    position: absolute;
-    left: 163px;
-    top: 290px;
     color: #FFFFFF;
     font-size: 20px;
     font-weight: 1700;
     opacity: 0.8;
   }
-  .languages {
-    position: absolute;
-    left: 160px;
-    top: 420px;
-    color: #FFFFFF;
-    font-size: 24px;
-    font-weight: 700;
-    opacity: 0.8;
+  .anime-list {
+    top: 260px;
   }
-
-  .languagestext {
-    color: #FFFFFF;
-    font-size: 20px;
-    font-weight: 700;
-    opacity: 0.8;
-    margin-right: 10px;
+  .cobalt {
+    top: 290px;
+  }
+  .win11 {
+    top: 320px;
+  }
+  .win11 {
+    top: 320px;
+  }
+  .office2016 {
+    top: 350px;
   }
   
-  .languageshour {
-    color: #FFFFFF;
-    font-size: 20px;
-    font-weight: 100;
-    opacity: 0.3;
-  }
-
-
   .icon {
     width: 24px;
     height: 24px;
@@ -241,5 +208,19 @@ body {
     transform: translateX(0px);
     top: 170px;
   }
- }
-  
+  .anime-list {
+    left: 30px;
+  }
+  .cobalt {
+    left: 30px;
+    top: 300px;
+  }
+  .win11 {
+    left: 30px;
+    top: 340px;
+  }
+    .office2016 {
+    left: 30px;
+    top: 380px;
+  }
+}

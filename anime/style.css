@@ -58,27 +58,15 @@ body {
     background: rgba(241, 186, 184, 0.7);
     display: flex;
     position: absolute;
-    
   }
-    #stats-list li {
-    left: 123px;
-    top: 450px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 4px 0;
-  }
-    .stats-list {
-    top: 450px;
-  }
-  
+
   .slash {
     position: absolute;
     left: 100vw;
     transform: translateX(-570px);
     top: 89px;
     text-align: center;
-    color: #F1B9B5;
+    color: rgba(241, 185, 181, 0.6);
     font-size: 20px;
     font-weight: 500;
     line-height: 43px;
@@ -123,50 +111,6 @@ body {
     line-height: 43px;
     text-decoration: none;
   }
-  .aboutme {
-    position: absolute;
-    left: 160px;
-    top: 235px;
-    color: #FFFFFF;
-    font-size: 24px;
-    font-weight: 700;
-    opacity: 0.8;
-  }
-
-  .aboutmetext {
-    position: absolute;
-    left: 163px;
-    top: 290px;
-    color: #FFFFFF;
-    font-size: 20px;
-    font-weight: 1700;
-    opacity: 0.8;
-  }
-  .languages {
-    position: absolute;
-    left: 160px;
-    top: 420px;
-    color: #FFFFFF;
-    font-size: 24px;
-    font-weight: 700;
-    opacity: 0.8;
-  }
-
-  .languagestext {
-    color: #FFFFFF;
-    font-size: 20px;
-    font-weight: 700;
-    opacity: 0.8;
-    margin-right: 10px;
-  }
-  
-  .languageshour {
-    color: #FFFFFF;
-    font-size: 20px;
-    font-weight: 100;
-    opacity: 0.3;
-  }
-
 
   .icon {
     width: 24px;
@@ -211,6 +155,79 @@ body {
     font-weight: 1700;
     opacity: 0.5;
   }
+
+  .search-box {
+    
+  position: absolute;
+  top: 240px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.search-box input {
+  color: white;
+  background: #26263B;
+  padding: 10px;
+  font-size: 16px;
+  width: 300px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+}
+
+.search-box button {
+  padding: 10px 20px;
+  margin-left: 10px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: none;
+  background-color: #F1B9B5;
+  color: #191824;
+  cursor: pointer;
+}
+
+#anime-results {
+  position: absolute;
+  top: 300px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80vw;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  color: white;
+  
+}
+
+#anime-results div {
+  width: 200px;
+  background: #26263B;
+  
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+#anime-results img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+#anime-results h3 {
+  font-size: 16px;
+  color: #F1B9B5;
+}
+
+#anime-results p,
+#anime-results a {
+  font-size: 14px;
+  color: #DFE0F5;
+  
+}
+  
  @media (max-width: 1000px) {
   .line {
     top: 220px;

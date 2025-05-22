@@ -7,11 +7,34 @@ body {
   
   .container {
     height: 100%;
-    min-height: 760px;
     width: 100vw;
     position: absolute;
-    overflow-x: hidden;
+    overflow: hidden;
   }
+  
+  .input-box {
+    position: absolute;
+    top: 628px;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    width: min(80vw, 1024px);
+    height: 64px;
+    padding: 0 18px;
+    background: #26263B;
+    border: 2px solid rgba(225, 226, 251, .3);
+    border-radius: 12px;
+    box-sizing: border-box;
+    transition: border-color .2s, box-shadow .2s;
+  }
+  .input-box:focus-within {
+    border-color: #9fa8ff;
+    box-shadow: 0 0 0 2px rgba(159, 168, 255, .35);
+  }
+
   
   .title {
     position: absolute;
@@ -51,25 +74,14 @@ body {
   }
   
   .line {
-    width: 88vw;
+    width: 90vw;
     height: 3px;
-    left: 6vw;
+    left: 100px;
     top: 190px;
     background: rgba(241, 186, 184, 0.7);
     display: flex;
     position: absolute;
     
-  }
-    #stats-list li {
-    left: 123px;
-    top: 450px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 4px 0;
-  }
-    .stats-list {
-    top: 450px;
   }
   
   .slash {
@@ -78,11 +90,10 @@ body {
     transform: translateX(-570px);
     top: 89px;
     text-align: center;
-    color: #F1B9B5;
+    color: rgba(241, 185, 181, 0.6);
     font-size: 20px;
     font-weight: 500;
     line-height: 43px;
-    text-decoration: none;
   }
 
   .projects {
@@ -95,7 +106,6 @@ body {
     font-size: 20px;
     font-weight: 500;
     line-height: 43px;
-    text-decoration: none;
   }
   
   .tools {
@@ -104,11 +114,10 @@ body {
     transform: translateX(-370px);
     top: 89px;
     text-align: center;
-    color: rgba(241, 185, 181, 0.6);
+    color: #F1B9B5;
     font-size: 20px;
     font-weight: 500;
     line-height: 43px;
-    text-decoration: none;
   }
   
   .iso {
@@ -121,53 +130,8 @@ body {
     font-size: 20px;
     font-weight: 500;
     line-height: 43px;
-    text-decoration: none;
-  }
-  .aboutme {
-    position: absolute;
-    left: 160px;
-    top: 235px;
-    color: #FFFFFF;
-    font-size: 24px;
-    font-weight: 700;
-    opacity: 0.8;
-  }
-
-  .aboutmetext {
-    position: absolute;
-    left: 163px;
-    top: 290px;
-    color: #FFFFFF;
-    font-size: 20px;
-    font-weight: 1700;
-    opacity: 0.8;
-  }
-  .languages {
-    position: absolute;
-    left: 160px;
-    top: 420px;
-    color: #FFFFFF;
-    font-size: 24px;
-    font-weight: 700;
-    opacity: 0.8;
-  }
-
-  .languagestext {
-    color: #FFFFFF;
-    font-size: 20px;
-    font-weight: 700;
-    opacity: 0.8;
-    margin-right: 10px;
   }
   
-  .languageshour {
-    color: #FFFFFF;
-    font-size: 20px;
-    font-weight: 100;
-    opacity: 0.3;
-  }
-
-
   .icon {
     width: 24px;
     height: 24px;
@@ -176,70 +140,71 @@ body {
   }
   
   .left-icon {
-    left: 273px;
-    top: 127px;
-    color: #DFE0F5;
-    fill: #DFE0F5;
-    mask-image: #DFE0F5;
+    left: 272px;
+    top: 126px;
   }
   
   .right-icon {
-    left: 336px;
-    top: 128px;
-    color: #DFE0F5;
-    fill: #DFE0F5;
-    mask-image: #DFE0F5;
+    left: 335px;
+    top: 127px;
   }
   
   .icon .fill {
-    color: #DFE0F5;
-    fill: #DFE0F5;
-    mask-image: #DFE0F5;
-    text-decoration: none;
-    mask-image: #DFE0F5;
     width: 24px;
     height: 24px;
+    background: #DFE0F5;
     position: absolute;
   }
-    .bottomtext {
+/* ikona z lewej */
+.menu-icon {
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+}
+  
+.link-text {
+    flex: 1;
+    min-width: 0;                 /* ważne, by flex‑box się nie rozpychał */
+    color: #DFE0F5;               /* rzeczywisty tekst */
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.4;
+    outline: none;                /* wyłącz domyślny focus ring */
+    user-select: text;
+    cursor: text;
+  }
+  .link-text:empty::before {
+    content: attr(data-placeholder);
+    color: #5E5F74;
+  }
+  
+  .subtext {
     position: absolute;
     left: 50%;
-    bottom: 80px;
     transform: translateX(-50%);
-    color: #FFFFFF;
-    font-size: 20px;
-    font-weight: 1700;
-    opacity: 0.5;
-  }
- @media (max-width: 1000px) {
-  .line {
-    top: 220px;
-  }
-    .slash {
-    position: absolute;
-    left: 150px;
-    transform: translateX(0px);
-    top: 170px;
-    }
-    .projects {
-    position: absolute;
-    left: 180px;
-    transform: translateX(0px);
-    top: 170px;
-    }
-  
-  .tools {
-    position: absolute;
-    left: 280px;
-    transform: translateX(0px);
-    top: 170px;
+    top: 583px;
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 43px;
   }
   
-  .iso {
+  .cat {
+    width: 413px;
+    height: 413px;
     position: absolute;
-    left: 350px;
-    transform: translateX(0px);
-    top: 170px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 280px;
   }
- }
+
+  .download-link {
+    flex-shrink: 0;
+    display: none;                /* JS zmieni na block */
+  }
+  .download-link img {
+    width: 24px;
+    height: 24px;
+    pointer-events: none;         /* klik trafia w <a>, nie w <img> */
+  }
   

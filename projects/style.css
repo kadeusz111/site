@@ -49,6 +49,9 @@ body {
     left: 325px;
     top: 117px;
   }
+  .ufolud {
+   top: 0px;
+  }
   
   .line {
     width: 88vw;
@@ -58,27 +61,63 @@ body {
     background: rgba(241, 186, 184, 0.7);
     display: flex;
     position: absolute;
-    
   }
-    #stats-list li {
-    left: 123px;
-    top: 450px;
+
+  .box1, .box2, .box3, .box4 {
+    position: absolute;
+    
     display: flex;
     align-items: center;
-    gap: 12px;
-    padding: 4px 0;
+    gap: 18px;
+    width: min(80vw, 500px);
+    height: 134px;
+    padding: 0 18px;
+    background: #26263B;
+    border: 2px solid rgba(225, 226, 251, .3);
+    border-radius: 12px;
+    box-sizing: border-box;
   }
-    .stats-list {
-    top: 450px;
+  .box1 {
+    top: 228px;
+    left: 18vw;
   }
-  
+  .box2 {
+    top: 228px;
+    left: 52vw;
+  }
+  .box3 {
+    top: 388px;
+    left: 18vw;
+  }
+  .box4 {
+    top: 388px;
+    left: 52vw;
+  }
+  .boxtest1, .boxtest2, .boxtest3, .boxtest4{
+    position: absolute;
+    top: 17px;
+    left: 25px;
+    color: #DFE0F5;
+    font-size: 20px;
+    font-weight: 700;
+  }
+  .boxtekstdescription {
+    position: absolute;
+    left: 25px;
+    top: 45px;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 1700;
+    opacity: 0.8;
+  }
+
   .slash {
     position: absolute;
     left: 100vw;
     transform: translateX(-570px);
     top: 89px;
     text-align: center;
-    color: #F1B9B5;
+    color: rgba(241, 185, 181, 0.6);
     font-size: 20px;
     font-weight: 500;
     line-height: 43px;
@@ -91,7 +130,7 @@ body {
     transform: translateX(-510px);
     top: 89px;
     text-align: center;
-    color: rgba(241, 185, 181, 0.6);
+    color: #F1B9B5;
     font-size: 20px;
     font-weight: 500;
     line-height: 43px;
@@ -166,7 +205,15 @@ body {
     font-weight: 100;
     opacity: 0.3;
   }
-
+  
+  #stats-list li {
+    left: 123px;
+    top: 450px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 4px 0;
+  }
 
   .icon {
     width: 24px;
@@ -242,4 +289,47 @@ body {
     top: 170px;
   }
  }
+  @media (max-width: 1550px) {
+    .box1 {
+      width: min(80vw, 700px);
+      left: 50%;
+      top: 228px;
+      transform: translateX(-50%);
+    }
+    .box2 {
+      width: min(80vw, 700px);
+      left: 50%;
+      top: 388px;
+      transform: translateX(-50%);
+    }
+    .box3 {
+      width: min(80vw, 700px);
+      top: 548px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .box4 {
+      width: min(80vw, 700px);
+      top: 708px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .bottomtext {
+      bottom: 10px;
+    }
+    .ufolud{
+    width: 88vw;
+    height: 3px;
+    left: 6vw;
+    top: 190px;
+    background: #191824;
+    display: flex;
+    position: absolute;
+
+
+
+      top: 900px;
+    }
+
+  }
   
