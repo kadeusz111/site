@@ -77,7 +77,7 @@ window.addEventListener('DOMContentLoaded', () => {
 // ===== LAST.FM: Recently Played =====
 async function getRecentlyPlayed() {
   const username = 'kadeusz';
-  const apiKey = 'process.env.MY_API_KEY';
+  const apiKey = process.env.MY_API_KEY;
 
   try {
     const response = await axios.get(`https://ws.audioscrobbler.com/2.0/`, {
@@ -124,3 +124,4 @@ document.addEventListener('DOMContentLoaded', () => {
   getRecentlyPlayed();
   setInterval(getRecentlyPlayed, 180000);
 });
+
