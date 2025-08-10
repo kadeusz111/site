@@ -1,0 +1,145 @@
+/* Kolorystyka bazowa - szarości */
+:root{
+  --bg-900:#0f0f10;
+  --bg-800:#161617;
+  --bg-700:#1f1f21;
+  --glass-opa: 0.08;
+  --glass-border: rgba(255,255,255,0.06);
+  --muted: #9aa0a6;
+  --accent: #8ea0ff; /* delikatny akcent */
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;}
+body{
+  margin:0;
+  color:#fff;
+  background: linear-gradient(180deg,var(--bg-900),var(--bg-800));
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.45;
+}
+.container{max-width:1100px;margin:0 auto;padding:2rem}
+
+/* NAV */
+.nav-wrap{position:sticky;top:0;backdrop-filter:blur(8px);z-index:60}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:0.6rem 0}
+.brand{font-weight:700;font-size:1.15rem;color:white;text-decoration:none}
+.nav-links{list-style:none;display:flex;gap:1rem;align-items:center;margin:0;padding:0}
+.nav-links a{color:var(--muted);text-decoration:none;padding:.5rem .7rem;border-radius:10px}
+.nav-links a:hover{color:white;background:rgba(255,255,255,0.02)}
+.cta{background:linear-gradient(90deg,var(--accent),#7fb0ff);color:#051124;padding:.5rem .9rem;border-radius:999px;font-weight:600}
+
+.nav-toggle{display:none;background:none;border:none;color:white;font-size:1.2rem}
+@media(max-width:880px){
+  .nav-links{position:fixed;right:1rem;top:64px;flex-direction:column;padding:1rem;background:transparent;display:none}
+  .nav-links.open{display:flex}
+  .nav-toggle{display:block}
+}
+
+/* GLASS */
+.glass{
+  background: rgba(255,255,255,var(--glass-opa));
+  border: 1px solid var(--glass-border);
+  border-radius:16px;
+  box-shadow: 0 10px 30px rgba(2,6,23,0.6);
+  backdrop-filter: blur(14px) saturate(120%);
+}
+
+/* HERO */
+.hero{padding:6rem 0 4rem;position:relative;overflow:hidden}
+.hero-inner{position:relative;display:flex;align-items:center}
+.hero-glass{display:flex;gap:2rem;padding:2rem;border-radius:22px;align-items:stretch}
+.hero-left{flex:1}
+.hero-right{width:340px}
+.logo{font-size:3rem;margin:0}
+.subtitle{color:var(--muted);margin-top:.5rem}
+.hero-actions{margin-top:1.2rem;display:flex;gap:.8rem}
+.btn{display:inline-block;padding:.6rem 1rem;border-radius:10px;text-decoration:none;font-weight:600}
+.btn.primary{background:linear-gradient(90deg,var(--accent),#7fb0ff);color:#051124}
+.btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+.quick-stats{display:flex;gap:1rem;margin-top:1.3rem;color:var(--muted);font-size:.92rem}
+.mockup{width:320px;padding:12px}
+.mockup-header{display:flex;gap:6px;margin-bottom:6px}
+.dot{width:10px;height:10px;border-radius:50%;display:inline-block}
+.dot.red{background:#ff6b6b}
+.dot.yellow{background:#ffd56b}
+.dot.green{background:#6bff95}
+.mockup-body{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:12px;border-radius:10px}
+.msg{display:flex;flex-direction:column;padding:.5rem;border-radius:8px;margin-bottom:.5rem}
+.msg .u{font-size:.78rem;color:var(--muted)}
+.msg .t{font-size:.95rem}
+.msg.bot{background:rgba(142,160,255,0.06)}
+.msg.small{opacity:.9;font-size:.9rem}
+
+.bot-avatar {width:100px;height:100px;border-radius:50%;margin-bottom:1rem;border:2px solid rgba(255,255,255,0.1);}
+
+/* Background shapes */
+.bg-shapes .shape{position:absolute;border-radius:50%;filter:blur(36px);opacity:.12}
+.shape.s1{width:480px;height:480px;left:-120px;top:-160px;background:#6b7280}
+.shape.s2{width:320px;height:320px;right:-80px;top:-80px;background:#1e293b}
+.shape.s3{width:180px;height:180px;left:20%;bottom:-80px;background:#94a3b8}
+
+/* SECTIONS */
+.section-title{font-size:1.6rem;margin:0 0 .4rem}
+.lead{color:var(--muted);margin-bottom:1rem}
+
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:1.1rem;margin-top:1.2rem}
+.card{padding:1.2rem}
+.card h3{margin:.6rem 0}
+.card p{color:var(--muted);font-size:.95rem}
+.icon{width:28px;height:28px;stroke:currentColor;fill:none;color:var(--muted)}
+
+@media(max-width:980px){.cards{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.cards{grid-template-columns:1fr}}
+
+.features-cta{display:flex;gap:12px;margin-top:1rem}
+
+.integration-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:1rem}
+.integration{padding:1.2rem;text-align:center}
+.integration img{width:64px;height:64px;border-radius:12px;margin-bottom:.6rem}
+.integration h4{margin:.4rem 0}
+.integration p{color:var(--muted);font-size:.95rem}
+@media(max-width:980px){.integration-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.integration-grid{grid-template-columns:1fr}}
+
+/* DEVELOPER */
+.dev-row{display:flex;gap:1rem;margin-top:1rem}
+.dev-card{flex:1;padding:1.2rem}
+.dev-setup{flex:1;padding:1.2rem}
+.avatar{width:120px;height:120px;border-radius:16px;margin-bottom:.6rem}
+.dev-links{display:flex;gap:.6rem;margin-top:.6rem}
+.link{color:var(--muted);text-decoration:none;padding:.4rem .6rem;border-radius:8px;background:rgba(255,255,255,0.02)}
+.details-acc{margin-top:1rem;padding:.6rem}
+
+@media(max-width:900px){.dev-row{flex-direction:column}}
+
+/* FAQ */
+.accordion{display:grid;gap:.8rem;margin-top:1rem}
+.acc-item{overflow:hidden}
+.acc-head{width:100%;text-align:left;padding:1rem;border-radius:12px;background:transparent;border:none;color:white;font-weight:600}
+.acc-body{padding: 1rem 1rem 3rem;color:var(--muted);max-height:0;overflow:hidden;transition:max-height .35s ease}
+.acc-item.open .acc-body{max-height:1000px}
+
+/* Contact */
+.contact{padding:2.2rem 0}
+.contact-card{display:flex;align-items:center;justify-content:space-between;padding:1.2rem}
+.contact-actions{display:flex;gap:.8rem}
+
+/* FOOTER */
+.site-footer{padding:1.8rem 0;color:var(--muted)}
+.footer-inner{display:flex;justify-content:space-between;align-items:center}
+.footer-links a{color:var(--muted);text-decoration:none;margin-left:1rem}
+
+/* small tweaks */
+pre.api-snippet{background:rgba(255,255,255,0.02);padding:8px;border-radius:8px;color:var(--muted)}
+code{background:rgba(255,255,255,0.02);padding:.2rem .4rem;border-radius:6px;color:var(--muted)}
+
+/* accessibility focus */
+a:focus, button:focus {outline:2px solid rgba(126,158,255,0.25);outline-offset:2px}
+
+/* subtle responsive hero -> stack */
+@media(max-width:940px){
+  .hero-glass{flex-direction:column}
+  .hero-right{width:100%}
+}

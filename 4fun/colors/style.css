@@ -1,0 +1,275 @@
+/* Global */
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Fira Code', monospace;
+  background: linear-gradient(160deg, #000000, #1A1825, #26263A);
+  background-size: 400% 400%;
+  animation: bgMove 25s ease infinite;
+  color: #FFFFFF;
+  overflow-x: hidden;
+}
+
+/* Subtelny akcent w tle */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: radial-gradient(circle at 80% 20%, rgba(238, 183, 180, 0.15), transparent 40%);
+}
+
+/* Animacja tła */
+@keyframes bgMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Fade-in efekt */
+.container {
+  height: 100%;
+  min-height: 760px;
+  width: 100vw;
+  position: absolute;
+  overflow-x: hidden;
+  animation: fadeIn 0.8s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Glassmorphism base */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 12px;
+}
+
+/* Tytuł */
+.title {
+  position: absolute;
+  left: 261px;
+  top: 65px;
+  color: #DFE0F5;
+  font-size: 40px;
+  font-weight: 700;
+}
+
+/* Avatar */
+.avatar {
+  width: 110px;
+  height: 110px;
+  position: absolute;
+  left: 130px;
+  top: 59px;
+  border-radius: 20px;
+}
+
+/* Kwadratowe przyciski */
+.square-box {
+  width: 43px;
+  height: 43px;
+  position: absolute;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.square-box.left { left: 262px; top: 117px; }
+.square-box.right { left: 325px; top: 117px; }
+
+/* Linia */
+.line {
+  width: 88vw;
+  height: 3px;
+  left: 6vw;
+  top: 190px;
+  position: absolute;
+  background: rgba(241, 186, 184, 0.3);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+/* Nawigacja */
+.slash, .projects, .tools, .iso {
+  position: absolute;
+  top: 89px;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 43px;
+  text-decoration: none;
+  padding: 4px 10px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.15);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.slash:hover, .projects:hover, .tools:hover, .iso:hover {
+  background: rgba(255,255,255,0.12);
+  color: #FFFFFF;
+}
+
+.slash { left: 100vw; transform: translateX(-570px); color: rgba(241, 185, 181, 0.6); }
+.projects { left: 100vw; transform: translateX(-510px); color: rgba(241, 185, 181, 0.6); }
+.tools { left: 100vw; transform: translateX(-370px); color: rgba(241, 185, 181, 0.6); }
+.iso { left: 100vw; transform: translateX(-260px); color: rgba(241, 185, 181, 0.6); }
+
+/* Lista ISO */
+.isolist {
+  left: 153px;
+  position: absolute;
+  color: #FFFFFF;
+  font-size: 20px;
+  font-weight: 700;
+  opacity: 0.8;
+}
+
+.background {
+  top: 250px;
+  width: 20px;
+  height: 20px;
+  left: 153px;
+  position: absolute;
+  background: #1A1825;
+  font-size: 20px;
+  font-weight: 700;
+  opacity: 0.8;
+  border: 2px rgba(243, 185, 182, 0.35) solid;
+  box-shadow: 0 0 12px rgba(243,185,182,0.8);
+  border-radius: 20px;
+}
+.colortext {
+  position: absolute;
+  left: 40px;
+  top: -2px;
+  color: #DFE0F5;
+  font-size: 20px;
+  font-weight: 200;
+  white-space: nowrap;
+}
+.outline {
+  top: 290px;
+  width: 20px;
+  height: 20px;
+  left: 153px;
+  position: absolute;
+  background: rgba(243, 185, 182, 0.35);
+  font-size: 20px;
+  font-weight: 700;
+  opacity: 0.8;
+  border: 2px rgba(243, 185, 182, 0.35) solid;
+  box-shadow: 0 0 12px rgba(243,185,182,0.8);
+  border-radius: 20px;
+}
+.outlinetext {
+  position: absolute;
+  left: 40px;
+  top: -2px;
+  color: #DFE0F5;
+  font-size: 20px;
+  font-weight: 200;
+}
+.shadow {
+  top: 330px;
+  width: 20px;
+  height: 20px;
+  left: 153px;
+  position: absolute;
+  background: rgba(243,185,182,0.8);
+  font-size: 20px;
+  font-weight: 700;
+  opacity: 0.8;
+  border: 2px rgba(243, 185, 182, 0.35) solid;
+  box-shadow: 0 0 12px rgba(243,185,182,0.8);
+  border-radius: 20px;
+}
+.shadowtext {
+  position: absolute;
+  left: 40px;
+  top: -2px;
+  color: #DFE0F5;
+  font-size: 20px;
+  font-weight: 200;
+}
+.text {
+  top: 370px;
+  width: 20px;
+  height: 20px;
+  left: 153px;
+  position: absolute;
+  background: #DFE0F5;
+  font-size: 20px;
+  font-weight: 700;
+  opacity: 0.8;
+  border: 2px rgba(243, 185, 182, 0.35) solid;
+  box-shadow: 0 0 12px rgba(243,185,182,0.8);
+  border-radius: 20px;
+}
+.texttext {
+  position: absolute;
+  left: 40px;
+  top: -2px;
+  color: #DFE0F5;
+  font-size: 20px;
+  font-weight: 200;
+}
+
+
+
+/* Ikony */
+.icon {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+}
+
+.left-icon { left: 273px; top: 127px; color: #DFE0F5; }
+.right-icon { left: 336px; top: 128px; color: #DFE0F5; }
+
+/* Dolny tekst */
+.bottomtext {
+  position: absolute;
+  left: 50%;
+  bottom: 80px;
+  transform: translateX(-50%);
+  color: #FFFFFF;
+  font-size: 20px;
+  font-weight: 700;
+  opacity: 0.5;
+  padding: 8px 12px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.15);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 8px;
+}
+
+/* Mobile */
+@media (max-width: 1000px) {
+  .line { top: 220px; }
+  .slash { left: 100px; transform: translateX(0px); top: 170px; }
+  .projects { left: 140px; transform: translateX(0px); top: 170px; }
+  .tools { left: 260px; transform: translateX(0px); top: 170px; }
+  .iso { left: 350px; transform: translateX(0px); top: 170px; }
+  .winxp { left: 30px; }
+  .win10 { left: 30px; top: 300px; }
+  .win11 { left: 30px; top: 340px; }
+  .office2016 { left: 30px; top: 380px; }
+}
