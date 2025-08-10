@@ -76,28 +76,10 @@ window.addEventListener('DOMContentLoaded', () => {
 
 // ===== LAST.FM: Recently Played =====
 async function getRecentlyPlayed() {
-  const username = 'kadeusz';
-  const apiKey = process.env.MY_API_KEY;
-
   try {
-    const response = await axios.get(`https://ws.audioscrobbler.com/2.0/`, {
-      params: {
-        method: 'user.getRecentTracks',
-        user: username,
-        api_key: apiKey,
-        format: 'json',
-        limit: 1
-      }
-    });
-
-    const track = response.data.recenttracks.track[0];
-    const lastPlayed = {
-      artist: track.artist['#text'] || "Unknown Artist",
-      track: track.name || "Unknown Track",
-      image: track.image?.find(img => img.size === 'large')?.['#text'] || "assets/cover.jpg"
-    };
-
-    updateRecentlyPlayed(lastPlayed);
+    const response = await fetch('https://lastfm.kadeusz-tarwowski.workers.dev/');
+    const track = await response.json();
+    updateRecentlyPlayed(track);
   } catch (error) {
     console.error('Error fetching recently played track:', error);
   }
@@ -108,7 +90,6 @@ function updateRecentlyPlayed(trackData) {
   const songArtistElement = document.querySelector('.song-artist');
   const coverElement = document.querySelector('.cover');
 
-  // Przycinanie długiego tytułu
   let fullTitle = trackData.track;
   if (fullTitle.length > 40) {
     fullTitle = fullTitle.slice(0, 40) + '...';
@@ -119,7 +100,6 @@ function updateRecentlyPlayed(trackData) {
   coverElement.src = trackData.image;
 }
 
-// Uruchomienie po załadowaniu strony i odświeżanie co 15s
 document.addEventListener('DOMContentLoaded', () => {
   getRecentlyPlayed();
   setInterval(getRecentlyPlayed, 180000);
