@@ -1,226 +1,192 @@
+/* Global */
+html, body {
+  height: 100%;
+}
+
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Fira Code', monospace;
-    background: #191824;
-  }
-  
-  .container {
-    height: 100%;
-    min-height: 760px;
-    width: 100vw;
-    position: absolute;
-    overflow-x: hidden;
-  }
-  
-  .title {
-    position: absolute;
-    left: 261px;
-    top: 65px;
-    color: #DFE0F5;
-    font-size: 40px;
-    font-weight: 700;
-  }
-  
-  .avatar {
-    width: 110px;
-    height: 110px;
-    position: absolute;
-    left: 130px;
-    top: 59px;
-    border-radius: 20px;
-  }
-  
-  .square-box {
-    width: 43px;
-    height: 43px;
-    position: absolute;
-    background: #26263B;
-    border-radius: 10px;
-    border: 2px solid rgba(225, 226, 251, 0.3);
-  }
-  
-  .square-box.left {
-    left: 262px;
-    top: 117px;
-  }
-  
-  .square-box.right {
-    left: 325px;
-    top: 117px;
-  }
-  
-  .line {
-    width: 88vw;
-    height: 3px;
-    left: 6vw;
-    top: 190px;
-    background: rgba(241, 186, 184, 0.7);
-    display: flex;
-    position: absolute;
-  }
+  margin: 0;
+  padding: 0;
+  font-family: 'Fira Code', monospace;
+  background: linear-gradient(160deg, #000000, #1A1825, #26263A);
+  background-size: 400% 400%;
+  animation: bgMove 25s ease infinite;
+  color: #FFFFFF;
+  overflow-x: hidden;
+}
 
-  .slash {
-    position: absolute;
-    left: 100vw;
-    transform: translateX(-570px);
-    top: 89px;
-    text-align: center;
-    color: rgba(241, 185, 181, 0.6);
-    font-size: 20px;
-    font-weight: 500;
-    line-height: 43px;
-    text-decoration: none;
-  }
+/* Subtelny akcent w tle */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: radial-gradient(circle at 80% 20%, rgba(238, 183, 180, 0.15), transparent 40%);
+}
 
-  .projects {
-    position: absolute;
-    left: 100vw;
-    transform: translateX(-510px);
-    top: 89px;
-    text-align: center;
-    color: rgba(241, 185, 181, 0.6);
-    font-size: 20px;
-    font-weight: 500;
-    line-height: 43px;
-    text-decoration: none;
-  }
-  
-  .tools {
-    position: absolute;
-    left: 100vw;
-    transform: translateX(-370px);
-    top: 89px;
-    text-align: center;
-    color: #F1B9B5;
-    font-size: 20px;
-    font-weight: 500;
-    line-height: 43px;
-    text-decoration: none;
-  }
-  
-  .iso {
-    position: absolute;
-    left: 100vw;
-    transform: translateX(-260px);
-    top: 89px;
-    text-align: center;
-    color: rgba(241, 185, 181, 0.6);
-    font-size: 20px;
-    font-weight: 500;
-    line-height: 43px;
-    text-decoration: none;
-  }
-  .toolslist {
-    left: 153px;
-    position: absolute;
-    color: #FFFFFF;
-    font-size: 20px;
-    font-weight: 1700;
-    opacity: 0.8;
-  }
-  .anime-list {
-    top: 260px;
-  }
-  .cobalt {
-    top: 290px;
-  }
-  .win11 {
-    top: 320px;
-  }
-  .win11 {
-    top: 320px;
-  }
-  .office2016 {
-    top: 350px;
-  }
-  
-  .icon {
-    width: 24px;
-    height: 24px;
-    position: absolute;
-    overflow: hidden;
-  }
-  
-  .left-icon {
-    left: 273px;
-    top: 127px;
-    color: #DFE0F5;
-    fill: #DFE0F5;
-    mask-image: #DFE0F5;
-  }
-  
-  .right-icon {
-    left: 336px;
-    top: 128px;
-    color: #DFE0F5;
-    fill: #DFE0F5;
-    mask-image: #DFE0F5;
-  }
-  
-  .icon .fill {
-    color: #DFE0F5;
-    fill: #DFE0F5;
-    mask-image: #DFE0F5;
-    text-decoration: none;
-    mask-image: #DFE0F5;
-    width: 24px;
-    height: 24px;
-    position: absolute;
-  }
-    .bottomtext {
-    position: absolute;
-    left: 50%;
-    bottom: 80px;
-    transform: translateX(-50%);
-    color: #FFFFFF;
-    font-size: 20px;
-    font-weight: 1700;
-    opacity: 0.5;
-  }
- @media (max-width: 1000px) {
-  .line {
-    top: 220px;
-  }
-    .slash {
-    position: absolute;
-    left: 150px;
-    transform: translateX(0px);
-    top: 170px;
-    }
-    .projects {
-    position: absolute;
-    left: 180px;
-    transform: translateX(0px);
-    top: 170px;
-    }
-  
-  .tools {
-    position: absolute;
-    left: 280px;
-    transform: translateX(0px);
-    top: 170px;
-  }
-  
-  .iso {
-    position: absolute;
-    left: 350px;
-    transform: translateX(0px);
-    top: 170px;
-  }
-  .anime-list {
-    left: 30px;
-  }
-  .cobalt {
-    left: 30px;
-    top: 300px;
-  }
-  .win11 {
-    left: 30px;
-    top: 340px;
-  }
-    .office2016 {
-    left: 30px;
-    top: 380px;
-  }
+/* Animacja tła */
+@keyframes bgMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Efekt fade-in */
+.container {
+  height: 100%;
+  min-height: 760px;
+  width: 100vw;
+  animation: fadeIn 0.8s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Apple Glass base */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 12px;
+}
+
+/* Tytuł i avatar */
+.title {
+  position: absolute;
+  left: 261px;
+  top: 65px;
+  color: #DFE0F5;
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.avatar {
+  width: 110px;
+  height: 110px;
+  position: absolute;
+  left: 130px;
+  top: 59px;
+  border-radius: 20px;
+}
+
+/* Kwadratowe przyciski */
+.square-box {
+  width: 43px;
+  height: 43px;
+  position: absolute;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.square-box.left {
+  left: 262px;
+  top: 117px;
+}
+
+.square-box.right {
+  left: 325px;
+  top: 117px;
+}
+
+/* Linia */
+.line {
+  width: 88vw;
+  height: 3px;
+  left: 6vw;
+  top: 190px;
+  background: rgba(241, 186, 184, 0.3);
+  position: absolute;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+/* Nawigacja */
+.slash, .projects, .tools, .iso {
+  position: absolute;
+  top: 89px;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 43px;
+  text-decoration: none;
+  padding: 4px 10px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.15);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.slash:hover, .projects:hover, .tools:hover, .iso:hover {
+  background: rgba(255,255,255,0.12);
+  color: #FFFFFF;
+}
+
+.slash { left: 100vw; transform: translateX(-570px); color: rgba(241, 185, 181, 0.6); }
+.projects { left: 100vw; transform: translateX(-510px); color: rgba(241, 185, 181, 0.6); }
+.tools { left: 100vw; transform: translateX(-370px); color: #F1B9B5; }
+.iso { left: 100vw; transform: translateX(-260px); color: rgba(241, 185, 181, 0.6); }
+
+/* Lista narzędzi */
+.toolslist {
+  left: 153px;
+  position: absolute;
+  color: #FFFFFF;
+  font-size: 20px;
+  font-weight: 700;
+  opacity: 0.8;
+}
+
+.anime-list { top: 260px; }
+.cobalt { top: 290px; }
+.colors { top: 320px; }
+.office2016 { top: 350px; }
+
+/* Ikony */
+.icon {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+}
+
+.left-icon { left: 273px; top: 127px; color: #DFE0F5; }
+.right-icon { left: 336px; top: 128px; color: #DFE0F5; }
+
+/* Dolny tekst */
+.bottomtext {
+  position: absolute;
+  left: 50%;
+  bottom: 80px;
+  transform: translateX(-50%);
+  color: #FFFFFF;
+  font-size: 20px;
+  font-weight: 700;
+  opacity: 0.5;
+  padding: 8px 12px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.15);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 8px;
+}
+
+/* Mobile */
+@media (max-width: 1000px) {
+  .line { top: 220px; }
+  .slash { left: 100px; transform: translateX(0px); top: 170px; }
+  .projects { left: 140px; transform: translateX(0px); top: 170px; }
+  .tools { left: 260px; transform: translateX(0px); top: 170px; }
+  .iso { left: 350px; transform: translateX(0px); top: 170px; }
+  .anime-list { left: 30px; }
+  .cobalt { left: 30px; top: 300px; }
+  .win11 { left: 30px; top: 340px; }
+  .office2016 { left: 30px; top: 380px; }
 }
