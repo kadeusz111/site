@@ -9,26 +9,28 @@ fetch('https://wakatime.kadeusz-tarwowski.workers.dev/', { cache: "no-store" })
       return;
     }
 
-    data.data.languages.forEach(lang => {
-      if (lang.name === "Other") return;
-      const totalSeconds = lang.total_seconds;
-      const hours = Math.floor(totalSeconds / 3600);
-      const minutes = Math.floor((totalSeconds % 3600) / 60);
+    data.data.languages
+      .filter(lang => lang.name !== "Other")
+      .slice(0, 7)
+      .forEach(lang => {
+        const totalSeconds = lang.total_seconds;
+        const hours = Math.floor(totalSeconds / 3600);
+        const minutes = Math.floor((totalSeconds % 3600) / 60);
 
-      const li = document.createElement('li');
-      li.style.position = 'relative';
+        const li = document.createElement('li');
+        li.style.position = 'relative';
 
-      const nameSpan = document.createElement('span');
-      nameSpan.className = 'languagestext';
-      nameSpan.textContent = lang.name;
+        const nameSpan = document.createElement('span');
+        nameSpan.className = 'languagestext';
+        nameSpan.textContent = lang.name;
 
-      const timeSpan = document.createElement('span');
-      timeSpan.className = 'languageshour';
-      timeSpan.textContent = ` ${hours}hrs ${minutes}minutes`;
+        const timeSpan = document.createElement('span');
+        timeSpan.className = 'languageshour';
+        timeSpan.textContent = ` ${hours}hrs ${minutes}minutes`;
 
-      li.appendChild(nameSpan);
-      li.appendChild(timeSpan);
-      list.appendChild(li);
+        li.appendChild(nameSpan);
+        li.appendChild(timeSpan);
+        list.appendChild(li);
     });
   })
   .catch(error => {
