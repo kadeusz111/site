@@ -11,10 +11,10 @@ body {
   background-size: 400% 400%;
   animation: bgMove 25s ease infinite;
   color: #FFFFFF;
-  overflow-x: hidden; /* nadpiszę na mobile w media query jeśli trzeba */
+  overflow-x: hidden; 
 }
 
-/* Delikatny akcent w tle */
+
 body::after {
   content: "";
   position: fixed;
@@ -46,7 +46,7 @@ body::after {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Boxes - Glassmorphism */
+/* Boxes */
 .box {
   position: absolute;
   background: rgba(26, 24, 37, 0.55);
@@ -79,7 +79,7 @@ body::after {
   box-shadow: 0 15px 40px rgba(0,0,0,0.6);
 }
 
-/* Tekst */
+/* Text eff */
 .username, .subline, .bio, .section-title, .section-content, .caption,
 .song-title, .song-controls, .video-label, .nav-item {
   text-shadow: 0 2px 6px rgba(0,0,0,0.5);
@@ -89,7 +89,7 @@ body::after {
   color: #D9D9D9;
 }
 
-/* Avatar */
+/* Avatar eff */
 .img-avatar {
   border: 3px solid rgba(243,185,182,0.6);
   box-shadow: 0 0 20px rgba(243,185,182,0.4);
@@ -100,7 +100,7 @@ body::after {
   box-shadow: 0 0 25px rgba(243,185,182,0.7);
 }
 
-/* Status */
+/* Status eff */
 
 @keyframes pulse {
   0%, 100% { box-shadow: 0 0 8px rgba(243,185,182,0.5); }
@@ -131,7 +131,7 @@ body::after {
   text-shadow: 0 0 12px rgba(225,226,250,0.9);
 }
 
-/* Skalowanie desktop */
+/* Skalowanie 16:9 */
 @media (max-width: 1600px) {
   .container { transform: scale(0.85); transform-origin: top left; }
 }
@@ -139,7 +139,7 @@ body::after {
   .container { transform: scale(0.75); transform-origin: top left; }
 }
 
-/* Ultra szerokie ekrany (21:9) */
+/* scalowanie (21:9) */
 @media (min-aspect-ratio: 21/9) {
   .container {
     max-width: 1800px;
@@ -149,8 +149,6 @@ body::after {
   }
 }
 
-/* --- ELEMENTY WEWNĄTRZ (pozycjonowanie / rozmiary) --- */
-/* (zostawione tak, jak miałeś — to zapewnia oryginalne wnętrze) */
 
 /* Images */
 .img-banner {
@@ -486,8 +484,7 @@ body::after {
   top: 769px;
 }
 
-/* Mobile: ustawienie boxów JEDEN POD DRUGIM, zachowanie wnętrza */
-/* Wymuszamy wartości !important żeby przebić wcześniejsze reguły */
+
 @media (max-width: 768px) {
   body {
     overflow-x: auto !important;
@@ -658,4 +655,5 @@ body::after {
     scale: calc((100vw * 0.95) / 573) !important;
   }
 }
+
 
