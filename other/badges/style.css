@@ -5,11 +5,11 @@ body {
     z-index: 0;  
 }
 .box {
-    position: absolute; 
+    position: absolute;
     top: 30px;
     left: 30px;
-    width: calc(100% - 780px);
-    height: calc(100% - 60px);
+    width: 1030px;
+    height: calc(100% - 60px); 
     background-color: black; 
     outline: 4px solid white;
     z-index: 1000;
@@ -79,7 +79,7 @@ body {
     top: 260px;
 }
 .mybadge {
-    position: absolute;
+    position: relative;
     left: 50px;
     top: 295px;
     font-size: 15px;
@@ -113,19 +113,30 @@ pre {
     font-size: 12px;
     height: 180px;
 }
-/* Sidebar i rzeczy z nim powiązane */
+
+/* =======================
+   SIDEBAR
+======================= */
+
 .sidebar {
     position: fixed;
     top: 0;
     right: 0;
-    height: 100vh;         
-    width: 200px;          
-    border-left: 3px dashed white; 
-    background: black;    
+    height: 100vh;
+    width: 200px;
+    background: black;
+    border-left: 3px dashed white;
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 9999;
+
+    transition: transform 0.3s ease;
+    transform: translateX(0);
+}
+
+.sidebar.hidden {
+    transform: translateX(100%);
 }
 
 .sidebar ul {
@@ -150,6 +161,7 @@ pre {
     color: #f0f0f0;
 }
 
+
 .submenu {
     display: none; 
     list-style: none;
@@ -170,6 +182,18 @@ pre {
     color: white;
 }
 
+.menu-toggle {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    font-size: 30px;
+    background: none;
+    border: none;
+    color: white;
+    z-index: 10000;
+    cursor: pointer;
+}
+
 /* padający śnieg */
 #snow-canvas {
     position: fixed;
@@ -179,4 +203,103 @@ pre {
     height: 100%;
     pointer-events: none; 
     z-index: 1;           
+}
+/* =======================
+   DESKTOP
+======================= */
+
+@media (min-width: 1310px) {
+    .menu-toggle {
+        display: none;
+    }
+
+    .sidebar {
+        transform: translateX(0);
+    }
+}
+
+@media (max-width: 1310px) {
+    /* mobile sidebar */
+    .sidebar {
+        transform: translateX(100%);
+    }
+
+    .sidebar.open {
+        transform: translateX(0);
+    }
+}
+@media (max-width: 1160px) {
+    .box {
+    width: calc(100% - 130px);
+    max-width: 1200px;
+    min-width: 300px;
+    }
+     
+    .minibox {
+        width: calc(100% - 90px);
+        max-width: 700px;
+
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
+    .badgecode {
+        position: relative;
+        white-space: nowrap;   /* albo nowrap */
+        display: inline-block;
+    }
+}
+@media (max-width: 900px) {
+    .coolsites {
+        top: 190px;
+    }
+    .badges {
+        top: 215px;
+    }
+    .mybadgetext {
+        top: 260px;
+    }
+    .mybadge {
+        top: 295px;
+    }
+    .minibox {
+        top: 65px;
+    }
+}
+
+@media (max-width: 630px) {
+    .coolsites {
+        top: 220px;
+    }
+    .badges {
+        top: 245px;
+    }
+    .mybadgetext {
+        top: 325px;
+    }
+    .mybadge {
+        top: 360px;
+    }
+    .minibox {
+        top: 65px;
+    }
+}
+@media (max-width: 490px) {
+    .description {
+        top: 130px;
+    }
+    .coolsites {
+        top: 240px;
+    }
+    .badges {
+        top: 275px;
+    }
+    .mybadgetext {
+        top: 390px;
+    }
+    .mybadge {
+        top: 430px;
+    }
+    .minibox {
+        top: 65px;
+    }
 }
