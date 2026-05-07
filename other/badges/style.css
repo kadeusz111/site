@@ -248,6 +248,9 @@ pre {
     }
 }
 @media (max-width: 1160px) {
+    .bucketwebring {
+        bottom: 35px;
+    }
     .box {
     width: calc(100% - 130px);
     max-width: 1200px;
