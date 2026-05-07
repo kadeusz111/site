@@ -254,7 +254,12 @@ if (yuuriPetBox && yuuriPetLink && yuuriPetTitlebar) {
   if (params.get("contact") === "open" && contactBox) {
     contactBox.style.display = "block";
   }
+  if (params.get("yuuriPetBox") === "open" && yuuriPetBox) {
+    yuuriPetBox.style.display = "block";
+  }
 });
+
+
 
 // ===== Rozwijanie tools i other =====
 const toolsLink = document.getElementById('tools-link');
