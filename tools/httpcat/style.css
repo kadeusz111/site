@@ -5,12 +5,12 @@ body {
     z-index: 0;  
 }
 .box {
-    position: absolute; /* lub absolute */
+    position: absolute; 
     top: 30px;
     left: 30px;
     width: calc(100% - 780px);
-    height: calc(100% - 60px); /* 100% wysokości minus 100px */
-    background-color: black; /* przykładowy kolor */
+    height: calc(100% - 60px); 
+    background-color: black; 
     outline: 4px solid white;
     z-index: 1000;
     left: 50%;
