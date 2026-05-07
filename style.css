@@ -204,6 +204,7 @@ body {
     background: black;
     border-left: 3px dashed white;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     z-index: 9999;
@@ -278,6 +279,25 @@ body {
 }
 
 .contact-link:hover {
+    text-decoration: underline;
+}
+
+.bucketwebring {
+    position: absolute;
+    bottom: 20px;
+    text-align: center;
+    color: white;
+    font-size: 16px;
+    width: 100%;
+}
+
+.bucketwebring a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.bucketwebring a:hover {
     text-decoration: underline;
 }
 
