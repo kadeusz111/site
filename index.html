@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+        <title>kadeusz.fun</title>
+        <meta property="og:title" content="kadeusz.top">
+        <meta property="og:description" content="Kadeusz’s website">
+        <meta property="og:image" src="assets/kadusz.png">
+        <meta property="og:type" content="website">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="profile-box">
+            <img class="img-avatar" src="./assets/pfp.png">
+            <span class="username">Kadeusz</span>
+            <span class="pronouns">He/Him • 18yo</span>
+        </div>
+        <div class="description-box">
+            <button class="wakatime-button">
+                <span class="wakatime-button-text">wakatime</span>
+            </button>
+            <div id="contact-window" class="window contact-win-width">
+                <div class="titlebar" id="contact-titlebar">
+                    <span>📩 Contact</span>
+                    <span class="close" onclick="closeContact()">x</span>
+                </div>
+                <div class="content">
+                    <p>If you'd like to reach out, you can do so using the information below</p>
+                    <div><span>discord: </span><a class="contact-link" href="#">@kadeusz</a></div></br>
+                    <div><span>github: </span><a class="contact-link" href="https://github.com/kadeusz111">@kadeusz111</a></div></br>
+                </div>
+            </div>
+
+
+
+            <span class="description">
+                👋Hi, I'm Kadeusz. <br>
+
+                I’m from Poland and I teach programming and computer science. I love listening to music and doing nothing all day. This site helps me practice programming, and I work on it in my free time (btw, this site is already on its 8th version) I hope you like it! The site’s code is open-source, so feel free to steal it.
+            </span>
+        </div>
+        <div id="wakatime-window" class="window">
+            <div class="titlebar" id="wakatime-titlebar">
+                <span>🕑Wakatime Stats</span>
+                <span class="close" onclick="closeBox()">x</span>
+            </div>
+            <div class="content">
+                <ul id="stats-list"></ul>
+            </div>
+        </div>
+        <div id="yuuri-pet-window" class="window">
+            <div class="titlebar" id="yuuri-pet-titlebar">
+                <span>Yuuri Pet</span>
+                <span class="close" onclick="closeYuuriPet()">x</span>
+            </div>
+
+                <div class="content">
+                    hello
+                </div>
+            </div>
+
+        <nav class="sidebar">
+            <ul>
+                <li><a href="#">kadeusz.top</a></li>
+                <li>
+                    <a href="#" id="tools-link">tools ▾</a>
+                    <ul class="submenu" id="tools-submenu">
+                        <li><a href="./tools/ascii-text-generator/index.html">Asci Text Generator</a></li>
+                        <li><a href="./tools/nslookup/index.html">nslookup</a></li>
+                        <li><a href="./tools/httpcat/index.html">httpcat</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" id="other-link">other ▾</a>
+                    <ul class="submenu" id="other-submenu">
+                        <li><a href="https://anilist.co/user/kadeusz/">AnimeList</a></li>
+                        <li><a href="./other/badges/index.html">badges</a></li>
+                        <li><a href="#" id="contact-link">contact</a></li>
+                        <li><a href="#" id="yuuri-pet-link">Yuuri Pet</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+        <div class="music-box">
+            <img class="music-cover" src="https://placehold.co/128x128" />
+            <div class="music-title-wrapper">
+                <div class="music-title">name</div>
+            </div>
+            <div class="recetly-played">Recently Played</div>
+            <div class="music-artist">artist</div>
+        </div>
+        <canvas id="snow-canvas"></canvas>
+    </body>
+    <script src="script.js"></script>
+</html>
