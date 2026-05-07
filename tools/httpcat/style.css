@@ -1,0 +1,151 @@
+body {
+    font-family: 'Pixelify Sans', sans-serif;
+    background:black;
+    height: 100%;
+    z-index: 0;  
+}
+.box {
+    position: absolute; /* lub absolute */
+    top: 30px;
+    left: 30px;
+    width: calc(100% - 780px);
+    height: calc(100% - 60px); /* 100% wysokości minus 100px */
+    background-color: black; /* przykładowy kolor */
+    outline: 4px solid white;
+    z-index: 1000;
+    left: 50%;
+    transform: translateX(-60%);
+}
+.title {
+    position: absolute;
+    color:white;
+    font-size: 50px;
+    font-weight: 100;
+    left: 170px;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.description {
+    position: absolute;
+    color:white;
+    font-size: 20px;
+    font-weight: 100;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 110px;
+}
+.httpcat-ui {
+    position: absolute;
+    top: 180px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.httpcat-ui input,
+.httpcat-ui button {
+    font-family: 'Pixelify Sans', sans-serif;
+    background: black;
+    color: white;
+    border: 2px solid white;
+    padding: 10px;
+    margin: 5px;
+}
+
+.httpcat-ui button:hover {
+    background: white;
+    color: black;
+    cursor: pointer;
+}
+
+.httpcat-ui img {
+    margin-top: 20px;
+    max-width: 500px;
+    width: 100%;
+    border: 2px solid white;
+}
+pre {
+    position: absolute;
+    top: 360px;
+    left: 25px;
+    width: calc(100% - 80px);
+    height: 180px;
+    background: black;
+    color: white;
+    padding: 10px;
+    border: 1px solid white;
+    margin-top: 10px;
+    overflow-x: auto;
+    font-family: monospace;
+    font-size: 12px;
+    height: 180px;
+}
+/* Sidebar i rzeczy z nim powiązane */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;         
+    width: 200px;          
+    border-left: 3px dashed white; 
+    background: black;    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.sidebar li {
+    margin: 20px 0;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: white;
+    font-size: 22px;
+    font-weight: 100;
+}
+
+.sidebar a:hover {
+    color: #f0f0f0;
+}
+
+.submenu {
+    display: none; 
+    list-style: none;
+    padding-left: 0;
+    margin-top: 10px;
+}
+
+.submenu li {
+    margin: 10px 0;
+}
+
+.submenu a {
+    font-size: 18px;
+    color: #ccc;
+}
+
+.submenu a:hover {
+    color: white;
+}
+
+/* padający śnieg */
+#snow-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; 
+    z-index: 1;           
+}

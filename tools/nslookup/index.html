@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+        <title>kadeusz.fun</title>
+        <meta property="og:title" content="kadeusz.fun">
+        <meta property="og:description" content="Kadeusz’s website">
+        <meta property="og:image" src="assets/kadusz.png">
+        <meta property="og:type" content="website">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="box">
+            <a class="title">NSLOOKUP</a>
+            <div class="nslookup-ui">
+                <input type="text" id="domain" placeholder="ex. google.com">
+
+                <select id="recordType">
+                    <option value="A">A</option>
+                    <option value="AAAA">AAAA</option>
+                    <option value="MX">MX</option>
+                    <option value="TXT">TXT</option>
+                    <option value="CNAME">CNAME</option>
+                </select>
+
+            <button onclick="lookup()">LOOKUP</button>
+</div>
+
+<pre id="result">result...</pre>
+        </div>
+        <nav class="sidebar">
+            <ul>
+                <li><a href="../../index.html">kadeusz.top</a></li>
+                <li>
+                    <a href="#" id="tools-link">tools ▾</a>
+                    <ul class="submenu" id="tools-submenu">
+                        <li><a href="../ascii-text-generator/index.html">Asci Text Generator</a></li>
+                        <li><a href="#">nslookup</a></li>
+                        <li><a href="tool3.html">Tool 3</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" id="other-link">other ▾</a>
+                    <ul class="submenu" id="other-submenu">
+                        <li><a href="https://anilist.co/user/kadeusz/">AnimeList</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <canvas id="snow-canvas"></canvas>
+    </body>
+    <script src="../../script.js"></script>
+    <script>
+        async function lookup() {
+        const domain = document.getElementById("domain").value;
+        const type = document.getElementById("recordType").value;
+        const output = document.getElementById("result");
+
+        if (!domain) {
+            output.textContent = "enter the domain!";
+            return;
+        }
+
+        output.textContent = "loading...";
+
+        try {
+            const res = await fetch(
+                `https://cloudflare-dns.com/dns-query?name=${domain}&type=${type}`,
+                {
+                    headers: { "accept": "application/dns-json" }
+                }
+            );
+
+            const data = await res.json();
+
+            if (!data.Answer) {
+            output.textContent = "No results.";
+            return;
+            }
+
+            let resultText = `Server: cloudflare\n\n`;
+
+            data.Answer.forEach(ans => {
+                resultText += `${ans.name}    ${type}    ${ans.data}\n`;
+            });
+
+            output.textContent = resultText;
+
+        } catch (err) {
+            output.textContent = "Błąd: " + err.message;
+        }
+    }
+    </script>
+</html>

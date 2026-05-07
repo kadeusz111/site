@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+        <title>kadeusz.fun</title>
+        <meta property="og:title" content="kadeusz.fun">
+        <meta property="og:description" content="Kadeusz’s website">
+        <meta property="og:image" src="assets/kadusz.png">
+        <meta property="og:type" content="website">
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <div class="box">
+            <a class="title">HTTPCAT</a>
+            <span class="description">a tool for visualizing HTTP codes using the http.cat API</span>
+            <div class="httpcat-ui">
+                <input type="number" id="code" placeholder="HTTP code (404)">
+                <button onclick="loadCat()">LOAD</button>
+
+                <img id="catImg" src="https://http.cat/404" alt="http cat">
+            </div>
+        </div>
+
+        <nav class="sidebar">
+            <ul>
+                <li><a href="../../index.html">kadeusz.top</a></li>
+                <li>
+                    <a href="#" id="tools-link">tools ▾</a>
+                    <ul class="submenu" id="tools-submenu">
+                        <li><a href="../ascii-text-generator/index.html">Asci Text Generator</a></li>
+                        <li><a href="#">nslookup</a></li>
+                        <li><a href="tool3.html">Tool 3</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" id="other-link">other ▾</a>
+                    <ul class="submenu" id="other-submenu">
+                        <li><a href="https://anilist.co/user/kadeusz/">AnimeList</a></li>
+                        <li><a href="/index.html?contact=open">About me</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <canvas id="snow-canvas"></canvas>
+    </body>
+
+    <script src="../../script.js"></script>
+    <script>
+    function loadCat() {
+        const code = document.getElementById("code").value || "404";
+        const img = document.getElementById("catImg");
+
+        img.src = `https://http.cat/${code}`;
+    }
+    </script>
+</html>
