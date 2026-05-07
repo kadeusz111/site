@@ -8,7 +8,7 @@ body {
     position: absolute; 
     top: 30px;
     left: 30px;
-    width: calc(100% - 780px);
+    width: 770px;
     height: calc(100% - 60px); 
     background-color: black; 
     outline: 4px solid white;
@@ -82,19 +82,32 @@ pre {
     font-size: 12px;
     height: 180px;
 }
-/* Sidebar i rzeczy z nim powiązane */
+.catimg {
+    position: relative;
+}
+/* =======================
+   SIDEBAR
+======================= */
+
 .sidebar {
     position: fixed;
     top: 0;
     right: 0;
-    height: 100vh;         
-    width: 200px;          
-    border-left: 3px dashed white; 
-    background: black;    
+    height: 100vh;
+    width: 200px;
+    background: black;
+    border-left: 3px dashed white;
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 9999;
+
+    transition: transform 0.3s ease;
+    transform: translateX(0);
+}
+
+.sidebar.hidden {
+    transform: translateX(100%);
 }
 
 .sidebar ul {
@@ -119,6 +132,7 @@ pre {
     color: #f0f0f0;
 }
 
+
 .submenu {
     display: none; 
     list-style: none;
@@ -139,6 +153,18 @@ pre {
     color: white;
 }
 
+.menu-toggle {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    font-size: 30px;
+    background: none;
+    border: none;
+    color: white;
+    z-index: 10000;
+    cursor: pointer;
+}
+
 /* padający śnieg */
 #snow-canvas {
     position: fixed;
@@ -148,4 +174,35 @@ pre {
     height: 100%;
     pointer-events: none; 
     z-index: 1;           
+}
+/* =======================
+   DESKTOP
+======================= */
+
+@media (min-width: 1038px) {
+    .menu-toggle {
+        display: none;
+    }
+
+    .sidebar {
+        transform: translateX(0);
+    }
+}
+
+@media (max-width: 1038px) {
+    /* mobile sidebar */
+    .sidebar {
+        transform: translateX(100%);
+    }
+
+    .sidebar.open {
+        transform: translateX(0);
+    }
+    .box {
+        left: 30px;
+        transform: translateX(0);
+        width: calc(100% - 100px);
+        max-width: 770px;
+        min-width: 260px;
+    }
 }

@@ -8,7 +8,7 @@ body {
     position: absolute; 
     top: 30px;
     left: 30px;
-    width: calc(100% - 780px);
+    width: 860px;
     height: calc(100% - 60px); 
     background-color: black; 
     outline: 4px solid white;
@@ -67,19 +67,30 @@ pre {
     font-size: 12px;
     height: 180px;
 }
-/* Sidebar i rzeczy z nim powiązane */
+
+/* =======================
+   SIDEBAR
+======================= */
+
 .sidebar {
     position: fixed;
     top: 0;
     right: 0;
-    height: 100vh;         
-    width: 200px;          
-    border-left: 3px dashed white; 
-    background: black;    
+    height: 100vh;
+    width: 200px;
+    background: black;
+    border-left: 3px dashed white;
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 9999;
+
+    transition: transform 0.3s ease;
+    transform: translateX(0);
+}
+
+.sidebar.hidden {
+    transform: translateX(100%);
 }
 
 .sidebar ul {
@@ -104,6 +115,17 @@ pre {
     color: #f0f0f0;
 }
 
+.menu-toggle {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    font-size: 30px;
+    background: none;
+    border: none;
+    color: white;
+    z-index: 10000;
+    cursor: pointer;
+}
 .submenu {
     display: none; 
     list-style: none;
@@ -133,4 +155,39 @@ pre {
     height: 100%;
     pointer-events: none; 
     z-index: 1;           
+}
+/* =======================
+   DESKTOP
+======================= */
+
+@media (min-width: 1130px) {
+    .menu-toggle {
+        display: none;
+    }
+
+    .sidebar {
+        transform: translateX(0);
+    }
+}
+
+@media (max-width: 1130px) {
+    /* mobile sidebar */
+    .sidebar {
+        transform: translateX(100%);
+    }
+
+    .sidebar.open {
+        transform: translateX(0);
+    }
+    .box {
+        left: 30px;
+        transform: translateX(-0%);
+        width: calc(100% - 100px);
+        max-width: 860px;
+    }
+}
+@media (max-width: 360px) {
+    .title {
+        font-size: 30px;
+    }
 }
