@@ -1,0 +1,271 @@
+body {
+    font-family: 'Pixelify Sans', sans-serif;
+    background:black;
+    height: 100%;
+    z-index: 0;  
+}
+.box {
+    position: absolute;
+    top: 30px;
+    left: 50px;
+    width: 1030px;
+    height: calc(100% - 60px);
+    background: black;
+    outline: 4px solid white;
+
+    display: flex;
+    flex-direction: column;
+}
+.content {
+    position: absolute;
+    top: 0px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    padding: 20px 50px;
+}
+.title {
+    position: absolute;
+    color:white;
+    font-size: 50px;
+    font-weight: 100;
+    left: 170px;
+    top: 20px;
+    left: 50px;
+}
+.blog-list {
+    position: absolute;
+    top: 120px;
+    left: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.blog-item {
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.blog-item:hover {
+    text-decoration: underline;
+}
+
+.post-view {
+    position: absolute;
+    top: 20px;
+    left: 50px;
+    width: calc(100% - 100px);
+    color: white;
+    right: 50px;
+
+    white-space: normal;      
+    word-wrap: break-word;    
+    overflow-wrap: break-word; 
+}
+
+.post-view img {
+    max-width: 100%;
+    margin: 10px 0;
+    outline: 2px solid white;
+}
+
+.hidden {
+    display: none;
+}
+
+.back-btn {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    background: rgb(0, 0, 0);
+    border: none;
+    padding: 6px 10px;
+    cursor: pointer;
+    color: white;
+    outline: 2px solid white;
+
+    font-family: 'Pixelify Sans', sans-serif; /* 🔥 TU FORCING */
+    font-size: 16px;
+}
+
+.back-btn:hover {
+    text-decoration: underline;
+}
+
+
+pre {
+    position: absolute;
+    top: 360px;
+    left: 25px;
+    width: calc(100% - 80px);
+    height: 180px;
+    background: black;
+    color: white;
+    padding: 10px;
+    border: 1px solid white;
+    margin-top: 10px;
+    overflow-x: auto;
+    font-family: monospace;
+    font-size: 12px;
+    height: 180px;
+}
+
+/* =======================
+   SIDEBAR
+======================= */
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 200px;
+    background: black;
+    border-left: 3px dashed white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+
+    transition: transform 0.3s ease;
+    transform: translateX(0);
+}
+
+.sidebar.hidden {
+    transform: translateX(100%);
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.sidebar li {
+    margin: 20px 0;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: white;
+    font-size: 22px;
+    font-weight: 100;
+}
+
+.sidebar a:hover {
+    color: #f0f0f0;
+}
+
+
+.submenu {
+    display: none; 
+    list-style: none;
+    padding-left: 0;
+    margin-top: 10px;
+}
+
+.submenu li {
+    margin: 10px 0;
+}
+
+.submenu a {
+    font-size: 18px;
+    color: #ccc;
+}
+
+.submenu a:hover {
+    color: white;
+}
+
+.bucketwebring {
+    position: absolute;
+    bottom: 20px;
+    text-align: center;
+    color: white;
+    font-size: 16px;
+    width: 100%;
+}
+
+.bucketwebring a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.bucketwebring a:hover {
+    text-decoration: underline;
+}
+
+.menu-toggle {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    font-size: 30px;
+    background: none;
+    border: none;
+    color: white;
+    z-index: 10000;
+    cursor: pointer;
+}
+
+/* padający śnieg */
+#snow-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; 
+    z-index: 1;           
+}
+/* =======================
+   DESKTOP
+======================= */
+
+@media (min-width: 1310px) {
+    .menu-toggle {
+        display: none;
+    }
+
+    .sidebar {
+        transform: translateX(0);
+    }
+}
+
+@media (max-width: 1310px) {
+    /* mobile sidebar */
+    .sidebar {
+        transform: translateX(100%);
+    }
+
+    .sidebar.open {
+        transform: translateX(0);
+    }
+}
+@media (max-width: 1160px) {
+    .box {
+    width: calc(100% - 130px);
+    max-width: 1200px;
+    min-width: 300px;
+    }
+     
+    .minibox {
+        width: calc(100% - 90px);
+        max-width: 700px;
+
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
+    .badgecode {
+        position: relative;
+        white-space: nowrap;   /* albo nowrap */
+        display: inline-block;
+    }
+}

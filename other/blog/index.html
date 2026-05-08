@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>kadeusz.top</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="box">
+        <a class="title">Blog</a>
+        <div class="content">
+            <div id="blogList" class="blog-list"></div>
+            <div id="postView" class="post-view hidden"></div>
+        </div>
+        <button id="backBtn" class="back-btn hidden">← back</button>
+    </div>
+        <nav class="sidebar">
+            <ul>
+                <li><a href="../../index.html">kadeusz.top</a></li>
+                <li>
+                    <a href="#" id="tools-link">tools ▾</a>
+                    <ul class="submenu" id="tools-submenu">
+                        <li><a href="../../tools/ascii-text-generator/index.html">Asci Text Generator</a></li>
+                        <li><a href="../../tools/httpcat/index.html">nslookup</a></li>
+                        <li><a href="../../tools/httpcat/index.html">httpcat</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" id="other-link">other ▾</a>
+                    <ul class="submenu" id="other-submenu">
+                        <li><a href="https://anilist.co/user/kadeusz/">AnimeList</a></li>
+                        <li><a href="../badges/index.html">badges</a></li>
+                        <li><a href="#">blog</a></li>
+                        <li><a href="/index.html?contact=open">contact</a></li>
+                        <li><a href="/index.html?yuuriPetBox=open">Yuuri Pet</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="bucketwebring">
+                <a href="https://webring.bucketfish.me/redirect.html?to=prev&name=your name"> ⬅ </a>
+                <a href="https://webring.bucketfish.me">bucket webring</a>
+                <a href="https://webring.bucketfish.me/redirect.html?to=next&name=your name"> ➡ </a>
+            </div>
+        </nav>
+
+<button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+
+<canvas id="snow-canvas"></canvas>
+
+<script src="../../script.js"></script>
+
+<!-- 🔥 DODANY JS -->
+<script>
+const titleEl = document.querySelector(".title");
+const blogList = document.getElementById("blogList");
+const postView = document.getElementById("postView");
+const backBtn = document.getElementById("backBtn");
+
+let posts = [];
+
+// LOAD POSTS
+fetch("./posts/posts.json")
+  .then(r => r.json())
+  .then(data => {
+    posts = data;
+    renderList();
+  });
+
+function formatName(file) {
+  return file
+    .replace(".md", "")
+    .replace(/-/g, " ");
+}
+
+function renderList() {
+  blogList.innerHTML = "";
+
+  posts.slice().reverse().forEach(p => {
+    const div = document.createElement("div");
+    div.className = "blog-item";
+    div.textContent = formatName(p.file);
+
+    div.onclick = () => openPost(p.file);
+
+    blogList.appendChild(div);
+  });
+}
+
+function openPost(file) {
+  blogList.style.display = "none";
+  postView.classList.remove("hidden");
+  backBtn.classList.remove("hidden");
+
+  titleEl.style.display = "none";
+
+  fetch("./posts/" + file)
+    .then(r => r.text())
+    .then(md => {
+      postView.innerHTML = markdown(md);
+    });
+}
+
+backBtn.onclick = () => {
+  blogList.style.display = "flex";
+  postView.classList.add("hidden");
+  backBtn.classList.add("hidden");
+  postView.innerHTML = "";
+
+  titleEl.style.display = "block";
+};
+
+function markdown(text) {
+  return text
+    .replace(/^# (.*$)/gim, "<h1>$1</h1>")
+
+    .replace(/!\s*\[(.*?)\]\s*\((.*?)\)/g,
+      '<img src="$2" alt="$1" style="max-width:100%; outline:2px solid white;">'
+    )
+
+    .replace(/\n/g, "<br>");
+}
+</script>
+
+</body>
+</html>
