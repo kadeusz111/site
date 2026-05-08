@@ -188,10 +188,6 @@ pre {
 }
 
 @media (max-width: 1130px) {
-
-    .bucketwebring {
-        bottom: 35px;
-    }
     /* mobile sidebar */
     .sidebar {
         transform: translateX(100%);

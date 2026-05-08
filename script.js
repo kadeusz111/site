@@ -161,7 +161,8 @@ document.addEventListener('DOMContentLoaded', () => {
 let topZ = 1000;
 
 function makeDraggable(windowEl, titlebarEl) {
-  let offsetX = 0, offsetY = 0;
+  let offsetX = 0;
+  let offsetY = 0;
   let isDragging = false;
 
   function setActive() {
@@ -169,27 +170,36 @@ function makeDraggable(windowEl, titlebarEl) {
     windowEl.style.zIndex = topZ;
   }
 
-  // klik w okno = aktywacja
-  windowEl.addEventListener("mousedown", setActive);
+  // WAŻNE dla mobile
+  titlebarEl.style.touchAction = "none";
 
-  titlebarEl.addEventListener("mousedown", (e) => {
-    isDragging = true;
+  windowEl.addEventListener("pointerdown", setActive);
 
-    offsetX = e.clientX - windowEl.offsetLeft;
-    offsetY = e.clientY - windowEl.offsetTop;
+titlebarEl.addEventListener("pointerdown", (e) => {
 
-    setActive();
-  });
+  if (e.target.closest("button, .close")) {
+    return;
+  }
 
-  document.addEventListener("mouseup", () => {
+  isDragging = true;
+
+  offsetX = e.clientX - windowEl.offsetLeft;
+  offsetY = e.clientY - windowEl.offsetTop;
+
+  setActive();
+
+  titlebarEl.setPointerCapture(e.pointerId);
+});
+
+  document.addEventListener("pointerup", () => {
     isDragging = false;
   });
 
-  document.addEventListener("mousemove", (e) => {
+  document.addEventListener("pointermove", (e) => {
     if (!isDragging) return;
 
-    windowEl.style.left = (e.clientX - offsetX) + "px";
-    windowEl.style.top = (e.clientY - offsetY) + "px";
+    windowEl.style.left = `${e.clientX - offsetX}px`;
+    windowEl.style.top = `${e.clientY - offsetY}px`;
   });
 }
 

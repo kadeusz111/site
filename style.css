@@ -115,6 +115,8 @@ body {
     display: flex;
     justify-content: space-between;
     font-size: 20px;
+    touch-action: none;
+    user-select: none;
 }
 
 .close {
@@ -334,6 +336,7 @@ body {
 ======================= */
 
 @media (max-width: 1038px) {
+
     .bucketwebring {
         bottom: 35px;
     }
