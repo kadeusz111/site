@@ -1,3 +1,24 @@
+window.addEventListener("load", () => {
+    setTimeout(() => {
+        const loader = document.getElementById("loader");
+        const page = document.getElementById("page");
+
+        page.style.display = "block";
+
+        // pozwala przeglądarce "zauważyć" zmianę display
+        requestAnimationFrame(() => {
+            page.classList.add("show");
+            loader.classList.add("hide");
+        });
+
+        // usuń loader po zakończeniu animacji
+        setTimeout(() => {
+            loader.style.display = "none";
+        }, 600);
+
+    }, 1000);
+});
+
 function toggleSidebar() {
   const sidebar = document.querySelector(".sidebar");
   sidebar.classList.toggle("open");
