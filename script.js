@@ -5,13 +5,11 @@ window.addEventListener("load", () => {
 
         page.style.display = "block";
 
-        // pozwala przeglądarce "zauważyć" zmianę display
         requestAnimationFrame(() => {
             page.classList.add("show");
             loader.classList.add("hide");
         });
 
-        // usuń loader po zakończeniu animacji
         setTimeout(() => {
             loader.style.display = "none";
         }, 600);
