@@ -9,6 +9,18 @@
         <meta property="og:description" content="Kadeusz’s website">
         <meta property="og:image" src="assets/kadusz.png">
         <meta property="og:type" content="website">
+        <meta http-equiv="X-Content-Type-Options" content="nosniff">
+        <meta name="referrer" content="strict-origin-when-cross-origin">
+        <meta http-equiv="Content-Security-Policy" content="
+            default-src 'self';
+            script-src 'self';
+            style-src 'self' 'unsafe-inline';
+            img-src 'self' data: https:;
+            font-src 'self' https:;
+            connect-src 'self';
+            object-src 'none';
+            base-uri 'self';
+        ">
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
